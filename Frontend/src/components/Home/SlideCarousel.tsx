@@ -77,7 +77,7 @@ const SlideCarousel = ({ Data }: any) => {
       <button
         type="button"
         id="nextBtn"
-        className="nextBtn absolute  w-[70px] h-[100px]  inset-[400px_1340px] z-[1]"
+        className="nextBtn absolute  w-[70px] h-[100px]  inset-[400px_1520px] z-[1]"
       >
         <img className="w-full" src={rightArrow} alt="" />
       </button>
