@@ -1,7 +1,7 @@
 import "./PropertyItem.scss";
 const propertyItem = ({ logo, title, number }: any) => {
   return (
-    <div className="w-[300px] group bg-orage relative p-[20px] rounded-[20px]">
+    <div className="w-[300px] max-w-[300px] min-w-[300px] group bg-orange-400 relative p-[20px] rounded-[20px]">
       <div className="bg-blue icon  relative w-[70px] h-[70px] overflow-hidden rounded-full mb-[30px] flex justify-center items-center">
         <img src={logo} alt="" className="w-[100%] h-[100%]" />
       </div>

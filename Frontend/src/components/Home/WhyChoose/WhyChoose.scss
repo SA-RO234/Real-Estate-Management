@@ -1,0 +1,16 @@
+.allAgency {
+  animation: LeftRight 1s ease-in-out infinite;
+  animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);	
+}
+
+@keyframes LeftRight {
+  0% {
+    transform: translateX(20px);
+  }
+  50%{
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}

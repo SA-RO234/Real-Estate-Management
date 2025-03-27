@@ -1,0 +1,12 @@
+.btnAppomtment::after, .btnAppomtment::before {
+  @apply bg-white !important;
+}
+
+.btnAppomtment{
+    @apply bg-blue !important;
+    @apply text-white !important;
+    ;
+}
+.btnAppomtment:hover{
+      @apply text-orage !important;
+}
