@@ -15,7 +15,7 @@ const PropertyTypes = () => {
         </div>
         <div className="line w-[220px] h-[2px] bg-blue m-auto"></div>
       </div>
-      <h1 className="text-center text-[50px] pb-[50px] font-moul text-orage">
+      <h1 className="text-center text-[40px] pb-[50px] font-moul text-orage">
         ស្វែងរកនូវប្រភេទផ្ទះ
       </h1>
     <PropertyContainer/>

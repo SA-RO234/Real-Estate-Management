@@ -3,6 +3,7 @@ import Home2 from "../../../assets/propertyType/img2.png";
 import Home3 from "../../../assets/propertyType/img3.png";
 import Home4 from "../../../assets/propertyType/img4.png";
 import Home5 from "../../../assets/propertyType/img5.png";
+import Home6 from "../../../assets/propertyType/img6.png";
 
 import PropertyItem from "./PropertyItem";
 const PropertyContainer = () => {
@@ -13,6 +14,7 @@ const PropertyContainer = () => {
       <PropertyItem logo={Home3} title={"ផ្ទះខ្មែរ"} number={20} />
       <PropertyItem logo={Home4} title={"ផ្ទះរោងដោល"} number={20} />
       <PropertyItem logo={Home5} title={"ផ្ទះរោងឌឿង"} number={20} />
+      <PropertyItem logo={Home6} title={"ផ្ទះលំហែ"} number={20} />
     </div>
   );
 };
