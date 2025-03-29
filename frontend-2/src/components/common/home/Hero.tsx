@@ -4,7 +4,7 @@ import PropertyFilter from "./PropertyFilter";
 
 const Hero = () => {
   return (
-    <section className="md:h-[500px] h-screen w-full flex items-center justify-center object-cover relative">
+    <section className="md:h-[600px] h-screen w-full flex items-center justify-center object-cover relative">
       <Image
         src={
           "https://sokharealestate.com.kh/assets/img/projects/project_3/flat_house_e2/crown_flat_house-retina.jpg"

@@ -107,8 +107,8 @@ const PropertyFilter = () => {
   }
 
   return (
-    <div className="absolute -bottom-16 left-0 right-0 max-w-4xl w-full mx-auto z-50 px-4">
-      <Card className="shadow-lg">
+    <div className="absolute bottom-8 left-0 right-0 max-w-4xl w-full mx-auto z-50 px-4">
+      <Card>
         <CardHeader>
           <h2>Find Your Property</h2>
         </CardHeader>
@@ -230,7 +230,7 @@ const PropertyFilter = () => {
               <Button
                 type="submit"
                 disabled={isPending}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto flex justify-end"
               >
                 {isPending ? (
                   <>
