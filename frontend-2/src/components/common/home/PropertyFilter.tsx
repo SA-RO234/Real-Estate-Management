@@ -230,7 +230,7 @@ const PropertyFilter = () => {
               <Button
                 type="submit"
                 disabled={isPending}
-                className="w-full sm:w-auto flex justify-end"
+                className="w-full sm:w-auto"
               >
                 {isPending ? (
                   <>

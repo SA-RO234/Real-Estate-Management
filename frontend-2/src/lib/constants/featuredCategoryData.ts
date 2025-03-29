@@ -1,4 +1,4 @@
-import { FeaturedCategoryType } from "../types/featuredCategoryType";
+import { FeaturedCategoryType } from "../types/index";
 
 export const featuredCategories: FeaturedCategoryType[] = [
   {

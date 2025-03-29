@@ -6,14 +6,14 @@ import Link from "next/link";
 
 const FeaturedCategories = () => {
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-8">
+    <section className="w-full max-w-full mx-auto px-4 py-8 ">
       <SectionTitle
         title="Featured Categories"
         subTitle="Explore our featured categories"
       />
 
-      <ScrollArea className="w-full">
-        <div className="flex space-x-4 pb-4">
+      <ScrollArea className="w-full ">
+        <div className="flex justify-center space-x-4 pb-4 ">
           {featuredCategories.map((feature) => (
             <Link
               key={feature.title}
