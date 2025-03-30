@@ -46,7 +46,7 @@ const HomeForYou = () => {
 
   //   --- Render Logic ---
   return (
-    <section className="w-full">
+    <section className="w-full mt-32">
       <SectionTitle title="Home For You" subTitle="Find your dream home" />
       {/* Loading State (Initial Load) */}
       {isLoading && (

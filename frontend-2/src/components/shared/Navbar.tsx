@@ -59,7 +59,7 @@ const Navbar = ({
     title: "JustHome",
   },
   menu = [
-    { title: "Home", url: "#" },
+    { title: "Home", url: "/" },
     {
       title: "Products",
       url: "#",
@@ -97,8 +97,8 @@ const Navbar = ({
       url: "/listing",
     },
     {
-      title: "Blog",
-      url: "#",
+      title: "About us",
+      url: "/about",
     },
   ],
   auth = {
@@ -107,7 +107,7 @@ const Navbar = ({
   },
 }: Navbar1Props) => {
   return (
-    <nav className="border-b w-full sticky top-0 z-50 bg-background shadow-sm transition-colors duration-200 ease-in-out">
+    <nav className="border-b w-full sticky top-0 z-[100] bg-background shadow-sm transition-colors duration-200 ease-in-out">
       <div className="container mx-auto px-4 py-2">
         {/* Desktop Menu */}
         <nav className="hidden justify-between lg:flex">

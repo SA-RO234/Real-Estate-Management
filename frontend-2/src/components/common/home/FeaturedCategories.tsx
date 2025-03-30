@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const FeaturedCategories = () => {
   return (
-    <section className="w-full max-w-full mx-auto px-4 py-8 ">
+    <section className="w-full py-8 ">
       <SectionTitle
         title="Featured Categories"
         subTitle="Explore our featured categories"

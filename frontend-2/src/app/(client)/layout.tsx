@@ -7,8 +7,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <Hero />
-      <main className="container px-4 mx-auto">{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );
