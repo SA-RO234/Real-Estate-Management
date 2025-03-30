@@ -4,7 +4,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Loader2 } from "lucide-react";
+import { Loader2, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -107,7 +107,7 @@ const PropertyFilter = () => {
   }
 
   return (
-    <div className="absolute bottom-8 left-0 right-0 max-w-4xl w-full mx-auto z-50 px-4">
+    <div className="absolute md:bottom-8 left-0 right-0 max-w-4xl w-full mx-auto z-50 px-4">
       <Card>
         <CardHeader>
           <h2>Find Your Property</h2>
@@ -238,7 +238,10 @@ const PropertyFilter = () => {
                     Searching...
                   </>
                 ) : (
-                  "Search Properties"
+                  <>
+                    <Search />
+                    Search Properties
+                  </>
                 )}
               </Button>
             </CardFooter>

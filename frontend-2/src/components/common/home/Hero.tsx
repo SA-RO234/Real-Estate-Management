@@ -15,7 +15,7 @@ const Hero = () => {
         className="object-cover w-full h-full "
       />
 
-      <div className="w-full h-full top-0 left-0 bg-black/20 absolute z-1 pointer-events-none"></div>
+      <div className="w-full h-full top-0 left-0 bg-black/40 absolute z-1 pointer-events-none"></div>
 
       <PropertyFilter />
     </section>

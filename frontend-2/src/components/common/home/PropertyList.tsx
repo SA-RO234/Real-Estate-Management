@@ -16,7 +16,7 @@ const PropertyList = ({ properties }: { properties: PropertyType[] }) => {
   }
 
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {properties.map((property) => (
         <Link
           href={`/property/${property.id}`}

@@ -53,7 +53,7 @@ interface Navbar1Props {
 
 const Navbar = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
+    url: "/",
     src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
     alt: "logo",
     title: "JustHome",
@@ -102,7 +102,7 @@ const Navbar = ({
     },
   ],
   auth = {
-    login: { title: "Login", url: "#" },
+    login: { title: "Login", url: "/login" },
     signup: { title: "Sign up", url: "#" },
   },
 }: Navbar1Props) => {
@@ -128,12 +128,12 @@ const Navbar = ({
             </div>
           </div>
           <div className="flex gap-2">
-            <Button asChild variant="outline">
+            <Button asChild>
               <a href={auth.login.url}>{auth.login.title}</a>
             </Button>
-            <Button asChild>
+            {/* <Button asChild>
               <a href={auth.signup.url}>{auth.signup.title}</a>
-            </Button>
+            </Button> */}
           </div>
         </nav>
 
@@ -168,12 +168,12 @@ const Navbar = ({
                   </Accordion>
 
                   <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
+                    <Button asChild>
                       <a href={auth.login.url}>{auth.login.title}</a>
                     </Button>
-                    <Button asChild>
+                    {/* <Button asChild>
                       <a href={auth.signup.url}>{auth.signup.title}</a>
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </SheetContent>
