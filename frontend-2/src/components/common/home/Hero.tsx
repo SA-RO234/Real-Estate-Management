@@ -4,10 +4,10 @@ import PropertyFilter from "./PropertyFilter";
 
 const Hero = () => {
   return (
-    <section className="md:h-[600px] h-screen w-full flex items-center justify-center object-cover relative">
+    <section className="md:h-[700px] h-screen w-full flex items-center justify-center object-cover relative">
       <Image
         src={
-          "https://sokharealestate.com.kh/assets/img/projects/project_3/flat_house_e2/crown_flat_house-retina.jpg"
+          "https://t3.ftcdn.net/jpg/03/44/86/14/360_F_344861474_80Hul52ydDYeg4SlGBNFdrNAsqoIy84w.jpg"
         }
         alt="hero"
         width={1920}
@@ -15,7 +15,7 @@ const Hero = () => {
         className="object-cover w-full h-full "
       />
 
-      <div className="w-full h-full top-0 left-0 bg-black/40 absolute z-1 pointer-events-none"></div>
+      <div className="w-full h-full top-0 left-0 bg-black/20 absolute z-1 pointer-events-none"></div>
 
       <PropertyFilter />
     </section>

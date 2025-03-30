@@ -47,7 +47,10 @@ const HomeForYou = () => {
   //   --- Render Logic ---
   return (
     <section className="w-full mt-32">
-      <SectionTitle title="Home For You" subTitle="Find your dream home" />
+      <SectionTitle
+        title="Newly Developed Condominium Projects in Phnom Penh"
+        subTitle="One of the surest ways to grow your money is by investing in pre-construction or under-construction condos. Your investment increases value from the first day you purchase the unit and will continue to appreciate until you decide to sell it. This long-term investment plan is an excellent way to earn passive income. Click here to get all condominium project in Phnom Penh capital Cambodia."
+      />
       {/* Loading State (Initial Load) */}
       {isLoading && (
         <div className="flex justify-center items-center h-60">

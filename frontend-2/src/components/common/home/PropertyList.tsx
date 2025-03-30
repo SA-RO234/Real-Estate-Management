@@ -1,9 +1,11 @@
+"use client";
+
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { PropertyType } from "@/lib/types";
 import { formatPrice } from "@/lib/utils/formatters";
 import { Bath, BedDouble, MapPin, Square } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 const PropertyList = ({ properties }: { properties: PropertyType[] }) => {
@@ -18,28 +20,36 @@ const PropertyList = ({ properties }: { properties: PropertyType[] }) => {
   return (
     <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {properties.map((property) => (
-        <Link
+        <a
           href={`/property/${property.id}`}
           key={property.id}
           className="group"
         >
           <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 p-0">
             <div className="relative aspect-video w-full overflow-hidden">
+              {property.status?.map((s: string) => (
+                <Badge
+                  key={s}
+                  variant="destructive"
+                  className="absolute top-2 right-2 z-10"
+                >
+                  {s}
+                </Badge>
+              ))}
               <Image
-                src={property.images[0]} // Assuming at least one image exists
+                src={property.images[0]}
                 alt={property.title}
-                fill // Use fill for responsive covering
+                fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw" // Optimize image loading
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <CardContent className="flex-grow">
               <div className="space-y-2">
-                {/* Price prominently displayed */}
                 <h3 className="text-xl font-bold text-primary">
                   {formatPrice(property.price)}
                 </h3>
-                {/* Title below price */}
+
                 <h2
                   className="text-lg font-semibold leading-tight truncate"
                   title={property.title}
@@ -92,7 +102,7 @@ const PropertyList = ({ properties }: { properties: PropertyType[] }) => {
               </div>
             </CardFooter>
           </Card>
-        </Link>
+        </a>
       ))}
     </div>
   );

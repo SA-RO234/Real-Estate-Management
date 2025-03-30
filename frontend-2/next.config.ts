@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    scrollRestoration: false, // Ensure this is false to reset scroll position
+  },
 };
 
 export default nextConfig;

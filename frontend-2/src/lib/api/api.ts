@@ -19,3 +19,10 @@ export const fetchProperties = async (page: number = 1, limit: number = 4) => {
     },
   };
 };
+
+export const fetchPropertyById = async (id: string) => {
+  const response = await fetch(`http://localhost:8081/properties/${id}`);
+  const data = await response.json();
+
+  return data;
+};
