@@ -21,7 +21,7 @@ export interface PropertyType {
 
 export interface PaginatedPropertiesResponse {
   data: PropertyType[];
-  pagiation: {
+  pagination: {
     currentPage: number;
     pageSize: number;
     totalPages: number;

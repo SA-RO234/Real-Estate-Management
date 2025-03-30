@@ -1,0 +1,128 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "Modern Downtown Apartment",
+      "images": [
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-1.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-2.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-3.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-4.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-20.jpg"
+      ],
+      "price": 450000,
+      "location": "123 Main St, Cityville, ST 12345",
+      "category": ["Apartment"],
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "length": 1150,
+      "status": ["For Sale"]
+    },
+    {
+      "id": 2,
+      "title": "Spacious Suburban House with Yard",
+      "images": [
+        "https://photos.ips-cambodia.com/photos/property/16330/2303140650577408-IPS04239-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/16330/23031502145325ec-4BedroomLinkAVillaForSale-ChipMongParkLand598RusseyKeo-Phnom-Penh5-850x567.tab.jpg"
+      ],
+      "price": 785000,
+      "location": "45 Elm Avenue, Suburbia, ST 54321",
+      "category": ["House"],
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "length": 2400,
+      "status": ["For Sale"]
+    },
+    {
+      "id": 3,
+      "title": "Luxury Beachfront Villa",
+      "images": [
+        "https://camrealtyservice.com/wp-content/uploads/2022/12/king-A-villa-for-sale-in-Borey-Peng-Huot-Boeng-Snor-Chbar-Ampov-Phnom-Penh-SVL0052168-1.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2022/12/king-A-villa-for-sale-in-Borey-Peng-Huot-Boeng-Snor-Chbar-Ampov-Phnom-Penh-SVL0052168-4.jpg"
+      ],
+      "price": 2150000,
+      "location": "1 Ocean Drive, Paradise Cove, ST 99999",
+      "category": ["Villa", "House"],
+      "bedrooms": 5,
+      "bathrooms": 5.5,
+      "length": 4800,
+      "status": ["Sold"]
+    },
+    {
+      "id": 4,
+      "title": "Cozy Studio Near University",
+      "images": [
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/IMG_5816.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/02/VL4207168-4.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/02/VL4207168-6.jpg"
+      ],
+      "price": 250000,
+      "location": "7 College Way, Campus Town, ST 11223",
+      "category": ["Studio", "Apartment"],
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "length": 550,
+      "status": ["Leased"]
+    },
+    {
+      "id": 5,
+      "title": "Large Plot of Undeveloped Land",
+      "images": [
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Twin-Villa-for-Rent-in-Peng-Huoth-50m-SVL1194168-1.png",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Twin-Villa-for-Rent-in-Peng-Huoth-50m-SVL1194168-1.jpg"
+      ],
+      "price": 150000,
+      "location": "Rural Route 5, Greenfield County, ST 67890",
+      "category": ["Land"],
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "length": 435600,
+      "status": ["For Sale"]
+    },
+    {
+      "id": 6,
+      "title": "Charming City Center Apartment",
+      "images": [
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Twin-Villa-for-Sale-in-Peng-huoth-50M-SVL1189168-1.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Twin-Villa-for-Sale-in-Peng-huoth-50M-SVL1189168-1.png"
+      ],
+      "price": 395000,
+      "location": "9 Central Plaza, Cityville, ST 12345",
+      "category": ["Apartment"],
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "length": 800,
+      "status": ["For Sale"]
+    },
+    {
+      "id": 7,
+      "title": "Charming City Center Apartment",
+      "images": [
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Twin-Villa-for-Sale-in-Peng-huoth-50M-SVL1189168-1.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Twin-Villa-for-Sale-in-Peng-huoth-50M-SVL1189168-1.png"
+      ],
+      "price": 395000,
+      "location": "9 Central Plaza, Cityville, ST 12345",
+      "category": ["Apartment"],
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "length": 800,
+      "status": ["For Sale"]
+    },
+    {
+      "id": 8,
+      "title": "Charming City Center Apartment",
+      "images": [
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Twin-Villa-for-Sale-in-Peng-huoth-50M-SVL1189168-1.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Twin-Villa-for-Sale-in-Peng-huoth-50M-SVL1189168-1.png"
+      ],
+      "price": 395000,
+      "location": "9 Central Plaza, Cityville, ST 12345",
+      "category": ["Apartment"],
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "length": 800,
+      "status": ["For Sale"]
+    }
+  ]
+}

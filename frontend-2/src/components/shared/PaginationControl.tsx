@@ -12,17 +12,17 @@ import {
 } from "@/components/ui/pagination";
 
 interface PaginationControlsProps {
-  currentPage: number;
+  page: number;
   totalPages: number;
   onPageChange: (page: number) => void;
   isFetching?: boolean; // Optional prop to indicate fetching state
 }
 
 const PaginationControls = ({
-  currentPage,
+  page,
   totalPages,
   onPageChange,
-  isFetching = false, // Default to false
+  isFetching = false,
 }: PaginationControlsProps) => {
   if (totalPages <= 1) {
     return null;
@@ -30,22 +30,20 @@ const PaginationControls = ({
 
   const handlePrevious = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    if (currentPage > 1 && !isFetching) {
-      // Don't change page while fetching
-      onPageChange(currentPage - 1);
+    if (page > 1 && !isFetching) {
+      onPageChange(page - 1);
     }
   };
 
   const handleNext = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    if (currentPage < totalPages && !isFetching) {
-      // Don't change page while fetching
-      onPageChange(currentPage + 1);
+    if (page < totalPages && !isFetching) {
+      onPageChange(page + 1);
     }
   };
 
-  const isPrevDisabled = currentPage === 1 || isFetching;
-  const isNextDisabled = currentPage === totalPages || isFetching;
+  const isPrevDisabled = page === 1 || isFetching;
+  const isNextDisabled = page === totalPages || isFetching;
 
   return (
     <Pagination className="mt-8">
@@ -66,7 +64,7 @@ const PaginationControls = ({
         {/* Page Indicator (Simple Example) */}
         <PaginationItem>
           <span className="px-4 py-2 text-sm font-medium">
-            Page {currentPage} of {totalPages}
+            Page {page} of {totalPages}
           </span>
         </PaginationItem>
         {/* TODO: Implement more detailed page number links if needed */}
