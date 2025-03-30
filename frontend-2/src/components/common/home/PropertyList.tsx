@@ -2,15 +2,14 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-// Assuming PropertyType is updated to match your new JSON structure
-import { PropertyType } from "@/lib/types"; // Make sure this type matches your JSON
-import { formatPrice } from "@/lib/utils/formatters"; // Ensure this handles number input
+
+import { PropertyType } from "@/lib/types";
+import { formatPrice } from "@/lib/utils/formatters";
 import { Bath, BedDouble, MapPin, Square } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import Link from "next/link"; // Use Next.js Link for client-side navigation
+import Link from "next/link";
 
-// Define a type for the component props, assuming PropertyType is correctly defined elsewhere
 interface PropertyListProps {
   properties: PropertyType[];
 }
@@ -27,20 +26,17 @@ const PropertyList: React.FC<PropertyListProps> = ({ properties }) => {
   return (
     <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {properties.map((property) => (
-        // Use Next.js Link for better navigation
         <Link
-          // Use propertyId or id depending on your routing setup. Using id here.
           href={`/property/${property.id}`}
-          key={property.propertyId || property.id} // Use propertyId if available, fallback to id
-          className="group block h-full" // Ensure link takes full height for clickability
+          key={property.propertyId || property.id}
+          className="group block h-full"
         >
           <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 p-0">
             <div className="relative aspect-video w-full overflow-hidden">
-              {/* Display the first status if available */}
               {property.status && property.status.length > 0 && (
                 <Badge
                   key={property.status[0]}
-                  variant="destructive" // Consider making variant dynamic based on status
+                  variant="destructive"
                   className="absolute top-2 right-2 z-10"
                 >
                   {property.status[0]}
@@ -64,8 +60,6 @@ const PropertyList: React.FC<PropertyListProps> = ({ properties }) => {
               )}
             </div>
             <CardContent className="p-4 flex-grow">
-              {" "}
-              {/* Consistent padding */}
               <div className="space-y-2">
                 {/* Access price amount */}
                 <h3 className="text-xl font-bold text-primary">

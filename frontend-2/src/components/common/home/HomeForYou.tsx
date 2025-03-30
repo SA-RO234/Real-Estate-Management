@@ -9,6 +9,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { fetchProperties } from "@/lib/api/api";
 import { Loader2 } from "lucide-react";
 import PaginationControls from "@/components/shared/PaginationControl";
+import { useGetPropertiesQuery } from "@/hooks/useGetPropertiesQuery";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -23,11 +24,7 @@ const HomeForYou = () => {
     isError,
     error,
     isFetching,
-  } = useQuery({
-    queryKey: ["properties", page, ITEMS_PER_PAGE],
-    queryFn: () => fetchProperties(page, ITEMS_PER_PAGE),
-    staleTime: 5 * 60 * 1000, // Keep data fresh for 5 minutes
-  });
+  } = useGetPropertiesQuery(page, ITEMS_PER_PAGE);
 
   const totalPages = queryResponse?.pagination.totalPages ?? 1;
 
