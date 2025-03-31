@@ -1,5 +1,7 @@
 "use client";
 
+import PropertyList from "@/components/common/home/PropertyList";
+import PropertyImageOverview from "@/components/common/property-detail/PropertyImageOverview";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -19,6 +21,7 @@ import {
 } from "@/components/ui/carousel";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
+import { useGetPropertiesQuery } from "@/hooks/useGetPropertiesQuery";
 import { useGetPropertyByIdQuery } from "@/hooks/useGetPropertyByIdQuery";
 import { formatPrice } from "@/lib/utils/formatters";
 import {
@@ -80,6 +83,14 @@ const PropertyDetailPage = () => {
     isError,
     error,
   } = useGetPropertyByIdQuery(id);
+
+  const {
+    data: properties,
+    isLoading: isLoadingProperties,
+    isError: isErrorProperties,
+    error: errorProperties,
+    isFetching: isFetchingProperties,
+  } = useGetPropertiesQuery(1, 6);
 
   // Loading State
   if (isLoading) {
@@ -152,7 +163,7 @@ const PropertyDetailPage = () => {
   return (
     <section className="container px-4 mx-auto pb-16">
       {/* --- Header with Back Button --- */}
-      <header className="py-4 mb-4 sticky top-0 bg-background z-20 border-b">
+      <header className="py-4 mb-4 sticky top-14 bg-background z-20 border-b">
         <Button variant={"outline"} size="sm" onClick={() => router.back()}>
           <ChevronLeft className="w-4 h-4 mr-1" />
           <span>Back to Listings</span>
@@ -163,7 +174,7 @@ const PropertyDetailPage = () => {
         <div className="lg:col-span-2 space-y-6  ">
           {/* --- Image Carousel --- */}
           {images && images.length > 0 ? (
-            <Carousel className="w-full rounded-lg overflow-hidden shadow-md ">
+            <Carousel className="w-full rounded-lg overflow-hidden">
               <CarouselContent>
                 {images.map((imageUrl: string, index: number) => (
                   <CarouselItem key={index}>
@@ -343,7 +354,7 @@ const PropertyDetailPage = () => {
         </div>
 
         {/* --- Column 2: Core Info & Agent --- */}
-        <div className="lg:col-span-1 p-4 md:sticky md:top-24 md:max-h-[calc(100vh-8rem)] md:p-1">
+        <div className="lg:col-span-1 p-4 md:sticky md:top-24 md:max-h-[calc(110vh-8rem)] md:p-1">
           <ScrollArea className="h-full w-full ">
             {/* --- Title & Location --- */}
             <div>
@@ -552,6 +563,35 @@ const PropertyDetailPage = () => {
           </ScrollArea>
         </div>
       </div>
+
+      {/* Images Overview */}
+      <PropertyImageOverview images={images} />
+
+      {/* Explore More */}
+      <h2 className="text-2xl font-bold mt-12">Explore More</h2>
+
+      {/* Loading */}
+      {isLoadingProperties && (
+        <div className="flex justify-center items-center h-60">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </div>
+      )}
+
+      {/* Error */}
+      {isErrorProperties && (
+        <div className="text-center text-destructive p-4 rounded-md">
+          <p>
+            Error loading properties:{" "}
+            {errorProperties?.message || "Unknown error"}
+          </p>
+        </div>
+      )}
+      {/* Property List */}
+      {properties && properties.data && properties.data.length > 0 && (
+        <div className="mt-6">
+          <PropertyList properties={properties.data} />
+        </div>
+      )}
     </section>
   );
 };
