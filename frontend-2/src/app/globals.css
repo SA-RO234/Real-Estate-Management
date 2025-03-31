@@ -69,6 +69,14 @@
   --chart-3: oklch(0.327 0.057 240.6); /* Was: 197 37% 24% */
   --chart-4: oklch(0.732 0.146 84.5); /* Was: 43 74% 66% */
   --chart-5: oklch(0.738 0.178 60.8); /* Was: 27 87% 67% */
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: oklch(0.602 0.189 262.1);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
 .dark {
@@ -97,6 +105,14 @@
   --chart-3: oklch(0.634 0.181 65.2); /* Was: 30 80% 55% */
   --chart-4: oklch(0.659 0.168 304.9); /* Was: 280 65% 60% */
   --chart-5: oklch(0.629 0.185 10.8); /* Was: 340 75% 55% */
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
 @layer base {
