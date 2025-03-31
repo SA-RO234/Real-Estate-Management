@@ -1,4 +1,4 @@
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import { Book, Menu, Sparkle, Sunset, Trees, Zap } from "lucide-react";
 
 import {
   Accordion,
@@ -41,6 +41,10 @@ interface Navbar1Props {
   menu?: MenuItem[];
   auth?: {
     login: {
+      title: string;
+      url: string;
+    };
+    dashboard: {
       title: string;
       url: string;
     };
@@ -103,6 +107,7 @@ const Navbar = ({
   ],
   auth = {
     login: { title: "Login", url: "/login" },
+    dashboard: { title: "Dashboard", url: "/dashboard" },
     signup: { title: "Sign up", url: "#" },
   },
 }: Navbar1Props) => {
@@ -134,6 +139,13 @@ const Navbar = ({
             {/* <Button asChild>
               <a href={auth.signup.url}>{auth.signup.title}</a>
             </Button> */}
+            <Button asChild>
+              <a href={auth.dashboard.url}>
+                <Sparkle />
+
+                {auth.dashboard.title}
+              </a>
+            </Button>
           </div>
         </nav>
 
@@ -174,6 +186,9 @@ const Navbar = ({
                     {/* <Button asChild>
                       <a href={auth.signup.url}>{auth.signup.title}</a>
                     </Button> */}
+                    <Button asChild>
+                      <a href={auth.dashboard.url}>{auth.dashboard.title}</a>
+                    </Button>
                   </div>
                 </div>
               </SheetContent>
