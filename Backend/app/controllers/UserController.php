@@ -71,10 +71,15 @@ class UserController
     }
 
     //  method getUser by role 
-    function getUserbyRole(){
+    function getUserbyRole($role){
         header("Content-Type: application/json");
-        $data = json_decode(file_get_contents("php://input"), true);
-        $users = $this->userModel->getUserByRole($data['role']);
-        echo json_encode($users);
+        $users = $this->userModel->getUserByRole($role);
+        echo json_encode($users, JSON_PRETTY_PRINT);
+    }
+    //  git all user
+    function getAllUser(){
+        header("Content-Type: application/json");
+        $users = $this->userModel->getAllUsers();
+        echo json_encode($users, JSON_PRETTY_PRINT);
     }
 }
