@@ -21,8 +21,6 @@ class PropertyController{
 
             if ($num > 0) {
                 $properties_arr = array();
-                $properties_arr = array();
-
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     extract($row);
                     $property_item = array(
@@ -31,8 +29,7 @@ class PropertyController{
                         "price" => $price,
                         "location" => $location,
                         "description" => $description,
-                        "saller_id" => $saller_id,
-                        "status" => $status,
+                        "user_id" => $user_id,
                         "created_at" => $created_at
                     );
                     array_push($properties_arr, $property_item);
@@ -49,7 +46,6 @@ class PropertyController{
 
     // Handle GET request for a single property by ID
     public function getPropertyById($id){
-        $id = (int)$id;
         $properties = $this->property->getPropertyById($id);
         if ($properties) {
             echo json_encode($properties);  // Return property data in JSON format

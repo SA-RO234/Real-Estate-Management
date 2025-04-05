@@ -8,8 +8,7 @@ class PropertyModel{
     public $description;
     public $location;
     public $created_at;
-    public $saller_id;
-    public $status;
+    public $users_id;
 
     public function __construct($database){
         $this->conn = $database;
@@ -30,18 +29,12 @@ class PropertyModel{
 
     //  Retrieve  a single property by id ;
     public function getPropertybyID ($id){
-         global $conn;
-        if (!$conn) {
-            error_log("Database connection is not initialized.");
-            return false;
-        }
         try {
-            echo ("Hello");
-            $stmt = $this->conn->prepare("SELECT * FROM properties WHERE id = ?");
+            global $conn;
+            $stmt = $this->conn->prepare("SELECT * FROM  properties WHERE id = ?");
             $stmt->execute([$id]);
-            
             return $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
+        } catch (PDOException $e){
             error_log("Error retrieving property by ID: " . $e->getMessage());
             return false;
         }

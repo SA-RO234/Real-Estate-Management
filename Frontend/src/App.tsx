@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AppRoutes from "./router/AppRoutes";
@@ -10,6 +11,8 @@ function App() {
       })}
     </Routes>
 =======
+=======
+>>>>>>> 14d0758b45f11a1fc295f675c0ae56857dd6eb4c
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -23,7 +26,10 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+<<<<<<< HEAD
 >>>>>>> b15d6e5ee0ebb6082b853af43af43919c318b37f
+=======
+>>>>>>> 14d0758b45f11a1fc295f675c0ae56857dd6eb4c
   );
 }
 export default App;
