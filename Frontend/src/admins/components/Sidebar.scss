@@ -1,0 +1,16 @@
+.line {
+  background: linear-gradient(
+    90deg,
+    rgba(224, 225, 226, 0) 0%,
+    rgb(224, 225, 226) 47.22%,
+    rgba(224, 225, 226, 0.157) 94.44%
+  );
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none !important;
+}
+
+.sidebar {
+  scrollbar-width: none;
+}

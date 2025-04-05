@@ -10,7 +10,11 @@ $url = $_SERVER['REQUEST_URI'];
 
 $routes = [
     "GET" => function () use ($usersController) {
-        $usersController->getUserbyRole();
+        if (isset($_GET['role'])) {
+            $usersController->getUserByRole($_GET['role']);
+        } else {
+            $usersController->getAllUser();
+        }
     },
     "POST" => function () use ($usersController) {
         if (isset($_POST['email']) && isset($_POST['password'])) {
