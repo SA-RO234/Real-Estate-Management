@@ -1,0 +1,15 @@
+# public/.htaccess
+
+RewriteEngine On
+
+# Redirect Trailing Slashes If Not A Folder...
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
+
+# Handle API Requests - Route to api/index.php
+# If your .htaccess is in the project root, change api/index.php to public/api/index.php (adjust path)
+# If your webserver root IS the 'api' directory, use index.php instead.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ api/index.php/$1 [L]
