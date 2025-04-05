@@ -1,0 +1,69 @@
+{
+  "id": 1,
+  "title": "Luxurious Modern Downtown Apartment",
+  "description": "A stunning modern apartment located in the heart of Cityville. Featuring high-end finishes, breathtaking city views, and top-tier amenities. Perfect for urban living with easy access to shopping, dining, and entertainment.",
+  "images": [
+    "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-1.jpg",
+    "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-2.jpg",
+    "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-3.jpg",
+    "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-4.jpg",
+    "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-20.jpg"
+  ],
+  "price": 450000,
+  "location": {
+    "address": "123 Main St, Cityville, ST 12345",
+    "city": "Cityville",
+    "state": "ST",
+    "zipcode": "12345",
+    "country": "USA",
+    "latitude": 40.7128,
+    "longitude": -74.0060
+  },
+  "category": ["Apartment"],
+  "bedrooms": 2,
+  "bathrooms": 2,
+  "size": {
+    "squareFeet": 1150,
+    "lotSize": "N/A"
+  },
+  "yearBuilt": 2022,
+  "status": ["For Sale"],
+  "amenities": [
+    "Swimming Pool",
+    "Fitness Center",
+    "24/7 Security",
+    "Rooftop Lounge",
+    "Smart Home Features",
+    "In-Unit Laundry"
+  ],
+  "features": {
+    "flooring": "Hardwood",
+    "kitchen": "Fully Equipped Modern Kitchen",
+    "heating": "Central Heating & Cooling",
+    "parking": "Underground Parking",
+    "view": "City Skyline"
+  },
+  "nearbyPlaces": [
+    "Central Park - 1.2 miles",
+    "Cityville Shopping Mall - 0.5 miles",
+    "Metro Station - 0.3 miles",
+    "Top-rated Schools - 1.0 miles"
+  ],
+  "agent": {
+    "name": "John Doe",
+    "phone": "+1 (555) 123-4567",
+    "email": "johndoe@realestate.com",
+    "agency": "Cityville Realty Group",
+    "profileImage": "https://via.placeholder.com/150"
+  },
+  "listedDate": "2025-03-30",
+  "propertyId": "APT-123456",
+  "hoaFees": 250,
+  "utilitiesIncluded": ["Water", "Trash Removal"],
+  "mortgageCalculator": {
+    "downPayment": 90000,
+    "loanTermYears": 30,
+    "interestRate": 4.5,
+    "estimatedMonthlyPayment": 2100
+  }
+}

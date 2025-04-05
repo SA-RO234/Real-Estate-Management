@@ -19,6 +19,7 @@ $routes = [
             $usersController->register();
         }
     }
+    
 ];
 
 if (array_key_exists($method, $routes)) {

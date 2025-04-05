@@ -1,0 +1,559 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "Luxurious Modern Downtown Apartment",
+      "description": "A stunning modern apartment located in the heart of Cityville. Featuring high-end finishes, breathtaking city views, and top-tier amenities. Perfect for urban living with easy access to shopping, dining, and entertainment.",
+      "images": [
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-1.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-2.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-3.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-4.jpg",
+        "https://camrealtyservice.com/wp-content/uploads/2025/03/Klem-Villa-for-Sale-in-Chankiri-SVL1209168-20.jpg"
+      ],
+      "price": 450000,
+      "location": {
+        "address": "123 Main St, Cityville, ST 12345",
+        "city": "Cityville",
+        "state": "ST",
+        "zipcode": "12345",
+        "country": "USA",
+        "latitude": 40.7128,
+        "longitude": -74.006
+      },
+      "category": ["Apartment"],
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "size": {
+        "squareFeet": 1150,
+        "lotSize": "N/A"
+      },
+      "yearBuilt": 2022,
+      "status": ["For Sale"],
+      "amenities": [
+        "Swimming Pool",
+        "Fitness Center",
+        "24/7 Security",
+        "Rooftop Lounge",
+        "Smart Home Features",
+        "In-Unit Laundry"
+      ],
+      "features": {
+        "flooring": "Hardwood",
+        "kitchen": "Fully Equipped Modern Kitchen",
+        "heating": "Central Heating & Cooling",
+        "parking": "Underground Parking",
+        "view": "City Skyline"
+      },
+      "nearbyPlaces": [
+        "Central Park - 1.2 miles",
+        "Cityville Shopping Mall - 0.5 miles",
+        "Metro Station - 0.3 miles",
+        "Top-rated Schools - 1.0 miles"
+      ],
+      "agent": {
+        "name": "John Doe",
+        "phone": "+1 (555) 123-4567",
+        "email": "johndoe@realestate.com",
+        "agency": "Cityville Realty Group",
+        "profileImage": "https://media.istockphoto.com/id/2157394121/photo/portrait-of-confident-businesswoman-standing-in-office.jpg?s=2048x2048&w=is&k=20&c=jVWSljhWaUFykKPapkLGwIt6uThvltja_TJmZlDfNZs="
+      },
+      "listedDate": "2025-03-30",
+      "propertyId": "APT-123456",
+      "hoaFees": 250,
+      "utilitiesIncluded": ["Water", "Trash Removal"],
+      "mortgageCalculator": {
+        "downPayment": 90000,
+        "loanTermYears": 30,
+        "interestRate": 4.5,
+        "estimatedMonthlyPayment": 2100
+      }
+    },
+    {
+      "id": 2,
+      "title": "Modern Villa in Chankiri Forest",
+      "description": "Luxurious 4-bedroom villa nestled in Chankiri's serene forest area. Combines contemporary design with eco-friendly features. Ideal for nature lovers seeking privacy near Phnom Penh.",
+      "images": [
+        "https://images.realestate.com.kh/__sized__/listings/2023-06/p1577001-thumbnail-750x562-70.jpeg",
+        "https://images.realestate.com.kh/__sized__/listings/2022-09/p1566834-thumbnail-400x300-70.jpeg",
+        "https://images.realestate.com.kh/__sized__/listings/2022-09/p1566762-thumbnail-400x300-70.jpeg"
+      ],
+      "price": 320000,
+      "location": {
+        "address": "Chankiri Forest Road, Phnom Penh",
+        "city": "Phnom Penh",
+        "state": "Chbar Ampov",
+        "zipcode": "12100",
+        "country": "Cambodia",
+        "latitude": 11.5564,
+        "longitude": 104.9282
+      },
+      "category": ["Villa"],
+      "bedrooms": 4,
+      "bathrooms": 5,
+      "size": {
+        "squareFeet": 4300,
+        "lotSize": "0.5 acres"
+      },
+      "yearBuilt": 2023,
+      "status": ["For Sale"],
+      "amenities": [
+        "Infinity Pool",
+        "Solar Panels",
+        "Private Garden",
+        "Smart Home System"
+      ],
+      "features": {
+        "flooring": "Polished Concrete & Teak",
+        "kitchen": "Italian Marble Countertops",
+        "parking": "Garage for 3 Cars"
+      },
+      "nearbyPlaces": [
+        "Phnom Penh City Center - 15km",
+        "Chankiri Water Park - 2km",
+        "AEON Mall 3 - 12km"
+      ],
+      "agent": {
+        "name": "Sok Vanna",
+        "phone": "+855 12 345 678",
+        "email": "vanna@camrealtyservice.com",
+        "agency": "Cambodia Realty Service"
+      }
+    },
+    {
+      "id": 3,
+      "title": "High-Floor Condo Unit in BKK1",
+      "description": "Bright and modern 1-bedroom condo located in the popular BKK1 district of Phnom Penh. Enjoy stunning city views from the balcony, access to premium building amenities including a rooftop pool and gym. Ideal for professionals or as an investment property.",
+      "images": [
+        "https://photos.ips-cambodia.com/photos/property/12252/2303220832b32a27-angkor-Grace2-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/210914163134d184-2-bedroom-with-rooftop-angkor-grace-siem-reap-01.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/2109141631219e69-2-bedroom-with-rooftop-angkor-grace-siem-reap-03.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/21091416314bf8ed-2-bedroom-with-rooftop-angkor-grace-siem-reap-04.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/21091416314bf8ed-2-bedroom-with-rooftop-angkor-grace-siem-reap-04.tab.jpg"
+      ],
+      "price": 185000,
+      "location": {
+        "address": "St 308, Boeung Keng Kang 1",
+        "city": "Phnom Penh",
+        "state": "Phnom Penh",
+        "zipcode": "12302",
+        "country": "Cambodia",
+        "latitude": 11.5525,
+        "longitude": 104.921
+      },
+      "category": ["Condominium", "Apartment"],
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "size": {
+        "squareMeters": 65,
+        "lotSize": "N/A"
+      },
+      "yearBuilt": 2019,
+      "status": ["For Sale"],
+      "amenities": [
+        "Rooftop Swimming Pool",
+        "Fitness Center",
+        "24/7 Security & Reception",
+        "Elevator Access",
+        "Secure Parking"
+      ],
+      "features": {
+        "flooring": "Tile",
+        "kitchen": "Western Style Kitchenette",
+        "heating": "Air Conditioned",
+        "parking": "Allocated Space",
+        "view": "City View",
+        "balcony": "Private Balcony"
+      },
+      "nearbyPlaces": [
+        "AEON Mall Phnom Penh - 1km",
+        "Independence Monument - 0.8km",
+        "Numerous Cafes & Restaurants",
+        "International Schools"
+      ],
+      "agent": {
+        "name": "Sophea Chen",
+        "phone": "+855 12 987 654",
+        "email": "sophea.c@khmerrealty.com",
+        "agency": "Khmer Realty Experts",
+        "profileImage": "https://media.istockphoto.com/id/1369109710/photo/portrait-of-a-handsome-young-businessman-working-in-an-office.webp?b=1&s=170667a&w=0&k=20&c=ecF5Xd0MFOik87S7J2BX7rCw_wvy72OoN59JzWWbmyA="
+      },
+      "listedDate": "2024-04-15",
+      "propertyId": "CONDO-PP-BKK1-002",
+      "hoaFees": 70,
+      "utilitiesIncluded": []
+    },
+    {
+      "id": 4,
+      "title": "Charming 4-Bed Villa with Garden in Siem Reap",
+      "description": "Spacious and comfortable family villa available for rent in a quiet residential area of Siem Reap (Sala Kamreuk), just a short drive from the city center and temples. Features a lovely private garden and ample parking.",
+      "images": [
+        "https://cdn.fazwaz-kh.com/nw/eXYoVPSBAh4ORuPS06za_AyVNu4/0x0/project/138720/img-7467-thumbnail-1040x780-70.jpeg",
+        "https://static.ips-cambodia.com/wp-content/uploads/2023/09/Jtower3-Phnom-Penh-10.jpg",
+        "https://static.ips-cambodia.com/wp-content/uploads/2023/09/Jtower3-Phnom-Penh-06.jpg",
+        "https://static.ips-cambodia.com/wp-content/uploads/2023/09/Jtower3-Phnom-Penh-06.jpg",
+        "https://static.ips-cambodia.com/wp-content/uploads/2023/09/Jtower3-Phnom-Penh-13.jpg",
+        "https://static.ips-cambodia.com/wp-content/uploads/2023/09/Jtower3-Phnom-Penh-15.jpg",
+        "https://static.ips-cambodia.com/wp-content/uploads/2023/09/Jtower3-Phnom-Penh-16.jpg",
+        "https://static.ips-cambodia.com/wp-content/uploads/2023/09/Jtower3-Phnom-Penh-14.jpg"
+      ],
+      "price": 1200,
+      "location": {
+        "address": "Sala Kamreuk Commune",
+        "city": "Siem Reap",
+        "state": "Siem Reap",
+        "zipcode": "17254",
+        "country": "Cambodia",
+        "latitude": 13.351,
+        "longitude": 103.8655
+      },
+      "category": ["Villa", "House", "Rental"],
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "size": {
+        "squareMeters": 220,
+        "lotSize": "300 sqm"
+      },
+      "yearBuilt": 2015,
+      "status": ["For Rent"],
+      "amenities": [
+        "Private Garden",
+        "Gated Entrance",
+        "Driveway Parking",
+        "Pet Friendly (Negotiable)"
+      ],
+      "features": {
+        "flooring": "Tile & Hardwood",
+        "kitchen": "Large Western Kitchen",
+        "heating": "Air Conditioned Bedrooms",
+        "parking": "Covered Carport",
+        "balcony": "Multiple Balconies",
+        "furnished": "Partially Furnished"
+      },
+      "nearbyPlaces": [
+        "Pub Street Area - 2.5km",
+        "Old Market (Psar Chas) - 2km",
+        "Angkor Wat Ticket Office - 4km",
+        "Local Market & Shops"
+      ],
+      "agent": {
+        "name": "David Wilson",
+        "phone": "+855 97 111 2222",
+        "email": "david.w@siemreapliving.com",
+        "agency": "Siem Reap Living",
+        "profileImage": "https://media.istockphoto.com/id/1342247162/photo/handsome-middle-aged-man-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=prGmt2ssjmrRM7QPhBFdhvXvlLG9L2svq6XQVra_Vus="
+      },
+      "listedDate": "2024-05-01",
+      "propertyId": "VILLA-SR-SK-003R",
+      "hoaFees": null,
+      "utilitiesIncluded": ["Waste Collection"]
+    },
+    {
+      "id": 5,
+      "title": "Modern Borey Villa in Chroy Changvar",
+      "description": "Brand new linked villa within a secure Borey (gated community) in the developing Chroy Changvar peninsula. Offers a modern lifestyle with community amenities like a pool and playground. Good access via National Road 6.",
+      "images": [
+        "https://photos.ips-cambodia.com/photos/property/19091/2410071021f70e5c-TS8-18-850x538.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19091/24100105191af924-TS8-10-850x538.tab.jpg"
+      ],
+      "price": 210000,
+      "location": {
+        "address": "Borey Peng Huoth Grand Star Platinum, National Road 6A",
+        "city": "Phnom Penh",
+        "state": "Phnom Penh",
+        "zipcode": "12110",
+        "country": "Cambodia",
+        "latitude": 11.615,
+        "longitude": 104.935
+      },
+      "category": ["Villa", "Borey", "Single Family Home", "New Development"],
+      "bedrooms": 4,
+      "bathrooms": 5,
+      "size": {
+        "squareMeters": 190,
+        "lotSize": "120 sqm"
+      },
+      "yearBuilt": 2023,
+      "status": ["For Sale"],
+      "amenities": [
+        "Community Swimming Pool",
+        "Clubhouse / Gym Access",
+        "Children's Playground",
+        "24/7 Gated Security",
+        "Landscaped Common Areas"
+      ],
+      "features": {
+        "flooring": "Porcelain Tile",
+        "kitchen": "Standard Borey Kitchen Layout",
+        "heating": "Air Con Wiring Ready",
+        "parking": "Front Parking Space",
+        "design": "Modern Contemporary",
+        "condition": "New / Unfurnished"
+      },
+      "nearbyPlaces": [
+        "Garden City Water Park - 3km",
+        "Win-Win Monument - 4km",
+        "Future Morodok Techo Stadium Area",
+        "Local Schools & Markets"
+      ],
+      "agent": {
+        "name": "Borey Sales Team",
+        "phone": "+855 23 555 888",
+        "email": "sales@boreyexample.com.kh",
+        "agency": "Peng Huoth Group",
+        "profileImage": null
+      },
+      "listedDate": "2024-03-10",
+      "propertyId": "BOREY-PP-CC-004",
+      "hoaFees": 50,
+      "utilitiesIncluded": []
+    },
+    {
+      "id": 6,
+      "title": "Traditional Shophouse in Central Daun Penh",
+      "description": "Classic Cambodian shophouse located in the bustling Daun Penh district, close to Central Market. Offers excellent potential for business on the ground floor with residential space above. Requires some renovation.",
+      "images": [
+        "https://photos.ips-cambodia.com/photos/property/19091/24100105191af924-TS8-10-850x538.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19752/2503190618adf817-IMG2973-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19752/25031906182babf2-1IMG2982-850x566.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19752/25031906171c4319-1IMG2981-850x566.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19752/25031906195af017-IMG2982-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19752/250319061913c5ac-IMG2979-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19752/2503190619353b22-IMG2978-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19752/2503190618d33f71-1IMG3018-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19752/2503190618d33f71-1IMG3018-850x567.tab.jpg"
+      ],
+      "price": 320000,
+      "location": {
+        "address": "Street 130, Phsar Kandal",
+        "city": "Phnom Penh",
+        "state": "Phnom Penh",
+        "zipcode": "12204",
+        "country": "Cambodia",
+        "latitude": 11.568,
+        "longitude": 104.9265
+      },
+      "category": ["Shophouse", "Commercial", "Mixed Use"],
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "size": {
+        "squareMeters": 160,
+        "lotSize": "64 sqm"
+      },
+      "yearBuilt": 1990,
+      "status": ["For Sale"],
+      "amenities": [
+        "Street Frontage",
+        "High Foot Traffic Area",
+        "Rooftop Access Possible"
+      ],
+      "features": {
+        "flooring": "Tile / Concrete",
+        "kitchen": "Basic Khmer Kitchen Setup",
+        "heating": "Fan / Natural Ventilation",
+        "structure": "Reinforced Concrete",
+        "levels": "3 Floors (Ground + 2)",
+        "potential": "Business / Residential Conversion"
+      },
+      "nearbyPlaces": [
+        "Central Market (Psar Thmei) - 0.5km",
+        "Riverside Promenade - 0.6km",
+        "Vattanac Capital Tower - 1km",
+        "Banks and Local Businesses"
+      ],
+      "agent": {
+        "name": "Mr. Dara",
+        "phone": "+855 11 333 444",
+        "email": "dara.realty@email.com",
+        "agency": "Local Property Link",
+        "profileImage": "https://media.istockphoto.com/id/1303315140/photo/confident-smiling-attractive-middle-aged-businessman-in-glasses-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=mJ02h8ZMev50YGEB9zaqQGSI33MxFgs7QxP3LzuBCYs="
+      },
+      "listedDate": "2024-04-22",
+      "propertyId": "SH-PP-DP-0052",
+      "hoaFees": null,
+      "utilitiesIncluded": []
+    },
+    {
+      "id": 69,
+      "title": "Traditional Shophouse in Central Daun Penh",
+      "description": "Classic Cambodian shophouse located in the bustling Daun Penh district, close to Central Market. Offers excellent potential for business on the ground floor with residential space above. Requires some renovation.",
+      "images": [
+        "https://photos.ips-cambodia.com/photos/property/11433/2408290659def07d-pool345-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/11433/2212290920051667-IMG2096-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/11433/2212290918a8a789-11433-2-bedroom-condo-for-sale-in-angkor-grace-siem-reap4-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/11433/2212290918a8a789-11433-2-bedroom-condo-for-sale-in-angkor-grace-siem-reap4-850x567.tab.jpg"
+      ],
+      "price": 320000,
+      "location": {
+        "address": "Street 130, Phsar Kandal",
+        "city": "Phnom Penh",
+        "state": "Phnom Penh",
+        "zipcode": "12204",
+        "country": "Cambodia",
+        "latitude": 11.568,
+        "longitude": 104.9265
+      },
+      "category": ["Shophouse", "Commercial", "Mixed Use"],
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "size": {
+        "squareMeters": 160,
+        "lotSize": "64 sqm"
+      },
+      "yearBuilt": 1990,
+      "status": ["For Sale"],
+      "amenities": [
+        "Street Frontage",
+        "High Foot Traffic Area",
+        "Rooftop Access Possible"
+      ],
+      "features": {
+        "flooring": "Tile / Concrete",
+        "kitchen": "Basic Khmer Kitchen Setup",
+        "heating": "Fan / Natural Ventilation",
+        "structure": "Reinforced Concrete",
+        "levels": "3 Floors (Ground + 2)",
+        "potential": "Business / Residential Conversion"
+      },
+      "nearbyPlaces": [
+        "Central Market (Psar Thmei) - 0.5km",
+        "Riverside Promenade - 0.6km",
+        "Vattanac Capital Tower - 1km",
+        "Banks and Local Businesses"
+      ],
+      "agent": {
+        "name": "Mr. Dara",
+        "phone": "+855 11 333 444",
+        "email": "dara.realty@email.com",
+        "agency": "Local Property Link",
+        "profileImage": "https://media.istockphoto.com/id/1303315140/photo/confident-smiling-attractive-middle-aged-businessman-in-glasses-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=mJ02h8ZMev50YGEB9zaqQGSI33MxFgs7QxP3LzuBCYs="
+      },
+      "listedDate": "2024-04-22",
+      "propertyId": "SH-PP-DP-0051",
+      "hoaFees": null,
+      "utilitiesIncluded": []
+    },
+    {
+      "id": 7,
+      "title": "1 Bedroom Condo For Sale - Angkor Grace Wellness Resort, Siem Reap",
+      "description": "Anyone would find a sophisticated and comfortable living experience in this resale unit at Angkor Grace Wellness Resort, which features plenty of space, natural light, and an overall bright and airy atmosphere. Homemakers would be delighted with the modern and fully-equipped kitchen, finished with quality appliances and a space-efficient layout for comfort and convenience. Meanwhile, the comfortable lounge area and dining set serve as worthy centerpieces to social gatherings at home. Located within the prestigious Angkor Grace Residence & Resort, residents have access to world-class amenities, including a fitness center, spa, and swimming pool. Whether you're seeking a personal residence or a lucrative investment property, this condo offers a truly exceptional living experience.",
+      "images": [
+        "https://photos.ips-cambodia.com/photos/property/19397/2412230908b0f5d3-MG6056-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19397/24120602482b9fce-19357-1-Bedroom-Condo-For-Sale-Angkor-Grace-Wellness-Resort-Siem-Reap10-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19397/241206024898d9d4-19357-1-Bedroom-Condo-For-Sale-Angkor-Grace-Wellness-Resort-Siem-Reap11-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19397/241206024898d9d4-19357-1-Bedroom-Condo-For-Sale-Angkor-Grace-Wellness-Resort-Siem-Reap11-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19397/2412060248dc8286-19357-1-Bedroom-Condo-For-Sale-Angkor-Grace-Wellness-Resort-Siem-Reap4-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19397/2412060248dc8286-19357-1-Bedroom-Condo-For-Sale-Angkor-Grace-Wellness-Resort-Siem-Reap4-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/19397/2412230854ef72d1-19397-1-Bedroom-Condo-For-Sale-Angkor-Grace-Wellness-Resort-Siem-Reap1-850x567.tab.jpg"
+      ],
+      "price": 120000,
+      "location": {
+        "address": "Street 130, Phsar Kandal",
+        "city": "Phnom Penh",
+        "state": "Phnom Penh",
+        "zipcode": "12204",
+        "country": "Cambodia",
+        "latitude": 11.568,
+        "longitude": 104.9265
+      },
+      "category": ["Shophouse", "Commercial", "Mixed Use"],
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "size": {
+        "squareMeters": 160,
+        "lotSize": "64 sqm"
+      },
+      "yearBuilt": 1990,
+      "status": ["For Sale"],
+      "amenities": [
+        "Street Frontage",
+        "High Foot Traffic Area",
+        "Rooftop Access Possible"
+      ],
+      "features": {
+        "flooring": "Tile / Concrete",
+        "kitchen": "Basic Khmer Kitchen Setup",
+        "heating": "Fan / Natural Ventilation",
+        "structure": "Reinforced Concrete",
+        "levels": "3 Floors (Ground + 2)",
+        "potential": "Business / Residential Conversion"
+      },
+      "nearbyPlaces": [
+        "Central Market (Psar Thmei) - 0.5km",
+        "Riverside Promenade - 0.6km",
+        "Vattanac Capital Tower - 1km",
+        "Banks and Local Businesses"
+      ],
+      "agent": {
+        "name": "Mr. Dara",
+        "phone": "+855 11 333 444",
+        "email": "dara.realty@email.com",
+        "agency": "Local Property Link",
+        "profileImage": "https://media.istockphoto.com/id/1303315140/photo/confident-smiling-attractive-middle-aged-businessman-in-glasses-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=mJ02h8ZMev50YGEB9zaqQGSI33MxFgs7QxP3LzuBCYs="
+      },
+      "listedDate": "2024-04-22",
+      "propertyId": "SH-PP-DP-0055",
+      "hoaFees": null,
+      "utilitiesIncluded": []
+    },
+    {
+      "id": 8,
+      "title": "2 Bedroom Condo For Sale - Svay Dangkum, Siem Reap",
+      "description": "From the living room, residents will be able to enjoy the gorgeous pool views. The entire unit has been designed to maximize space and light, with an open concept layout in the living area presenting a social atmosphere: the L-shaped kitchen in the corner, facing the dining area and lounge situated towards the balcony. The space is also air-conditioned, as are both bedrooms which have been styled to ensure maximum comfort for occupants. The two (2) bathrooms are also equipped with hot/cold showers, while you'll find a designated storage area accessible from the main hall. ",
+      "images": [
+        "https://photos.ips-cambodia.com/photos/property/16528/2304120709c1d770-ROSE-APPLE-SQUARE-05-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/16528/2304120710aaef80-165281BRRoseAppleSquareCondoForSale09-850x567.tab.jpg",
+        "https://photos.ips-cambodia.com/photos/property/16528/2304120710cdb7d0-165281BRRoseAppleSquareCondoForSale07-850x567.tab.jpg"
+      ],
+      "price": 89000,
+      "location": {
+        "address": "Street 130, Phsar Kandal",
+        "city": "Phnom Penh",
+        "state": "Phnom Penh",
+        "zipcode": "12204",
+        "country": "Cambodia",
+        "latitude": 11.568,
+        "longitude": 104.9265
+      },
+      "category": ["Shophouse", "Commercial", "Mixed Use"],
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "size": {
+        "squareMeters": 160,
+        "lotSize": "64 sqm"
+      },
+      "yearBuilt": 1990,
+      "status": ["For Sale"],
+      "amenities": [
+        "Street Frontage",
+        "High Foot Traffic Area",
+        "Rooftop Access Possible"
+      ],
+      "features": {
+        "flooring": "Tile / Concrete",
+        "kitchen": "Basic Khmer Kitchen Setup",
+        "heating": "Fan / Natural Ventilation",
+        "structure": "Reinforced Concrete",
+        "levels": "3 Floors (Ground + 2)",
+        "potential": "Business / Residential Conversion"
+      },
+      "nearbyPlaces": [
+        "Central Market (Psar Thmei) - 0.5km",
+        "Riverside Promenade - 0.6km",
+        "Vattanac Capital Tower - 1km",
+        "Banks and Local Businesses"
+      ],
+      "agent": {
+        "name": "Mr. Dara",
+        "phone": "+855 11 333 444",
+        "email": "dara.realty@email.com",
+        "agency": "Local Property Link",
+        "profileImage": "https://media.istockphoto.com/id/1303315140/photo/confident-smiling-attractive-middle-aged-businessman-in-glasses-looking-at-camera.webp?b=1&s=170667a&w=0&k=20&c=mJ02h8ZMev50YGEB9zaqQGSI33MxFgs7QxP3LzuBCYs="
+      },
+      "listedDate": "2024-04-22",
+      "propertyId": "SH-PP-DP-0059",
+      "hoaFees": null,
+      "utilitiesIncluded": []
+    }
+  ]
+}
