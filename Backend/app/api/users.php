@@ -24,7 +24,6 @@ $routes = [
         }
     }
 ];
-
 if (array_key_exists($method, $routes)) {
     $routes[$method]();
 }
