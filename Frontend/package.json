@@ -21,10 +21,6 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.4.0",
-<<<<<<< HEAD
-    "recharts": "^2.15.1",
-=======
->>>>>>> b15d6e5ee0ebb6082b853af43af43919c318b37f
     "sass": "^1.86.0",
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.0.2",
