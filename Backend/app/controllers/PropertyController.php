@@ -21,7 +21,7 @@ class PropertyController{
 
             if ($num > 0) {
                 $properties_arr = array();
-                $properties_arr["records"] = array();
+                $properties_arr = array();
 
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     extract($row);
@@ -35,7 +35,7 @@ class PropertyController{
                         "status" => $status,
                         "created_at" => $created_at
                     );
-                    array_push($properties_arr["records"], $property_item);
+                    array_push($properties_arr, $property_item);
                 }
                 echo json_encode($properties_arr, JSON_PRETTY_PRINT);
             } else {
@@ -50,9 +50,9 @@ class PropertyController{
     // Handle GET request for a single property by ID
     public function getPropertyById($id){
         $id = (int)$id;
-        $property = $this->property->getPropertyById($id);
-        if ($property) {
-            echo json_encode($property);  // Return property data in JSON format
+        $properties = $this->property->getPropertyById($id);
+        if ($properties) {
+            echo json_encode($properties);  // Return property data in JSON format
         } else {
             echo json_encode(["message" => "Property not found."]);
         }

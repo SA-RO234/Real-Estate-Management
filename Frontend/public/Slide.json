@@ -1,7 +1,19 @@
 [
   {
     "id": 1,
-    "Photo": "../src/assets/slide/hero1.png",
+    "photo": "../src/assets/slide/hero1.png",
+    "title": "ជ្រើសរើសទីកន្លែងដែលជាសុបិនរបស់អ្នក",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque aliquam recusandae expedita neque exercitationem quibusdam voluptas quae, sint dolore!"
+  },
+   {
+     "id": 2,
+     "photo": "../src/assets/slide/hero2.png",
+     "title": "ជ្រើសរើសទីកន្លែងដែលជាសុបិនរបស់អ្នក",
+     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque aliquam recusandae expedita neque exercitationem quibusdam voluptas quae, sint dolore!"
+   },
+    {
+    "id": 3,
+    "photo": "../src/assets/slide/hero3.png",
     "title": "ជ្រើសរើសទីកន្លែងដែលជាសុបិនរបស់អ្នក",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque aliquam recusandae expedita neque exercitationem quibusdam voluptas quae, sint dolore!"
   }

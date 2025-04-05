@@ -15,7 +15,6 @@ class PropertyModel{
         $this->conn = $database;
     }
 
-
     //   Retrieve all property from database 
     public function getAllproperties(){
         try {
