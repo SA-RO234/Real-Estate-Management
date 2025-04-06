@@ -17,7 +17,9 @@ $routes = [
         }
     },
     "POST" => function () use ($usersController) {
-        if (isset($_POST['email']) && isset($_POST['password'])) {
+        $input = json_decode(file_get_contents("php://input"), true);
+
+        if (isset($input['email']) && isset($input['password'])) {
             $usersController->login();
         } else {
             $usersController->register();
