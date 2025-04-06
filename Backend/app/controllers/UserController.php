@@ -51,19 +51,16 @@ class UserController
     //  Login controller
     public function login(){
         $data = json_decode(file_get_contents("php://input"), true);
-        if (!$data) {
-            echo json_encode(["success" => false, "message" => "Invalid JSON input"]);
-            return;
-        }else{
-  
-        if ($this->userModel->login($data['email'], $data['password'])) {
-            echo json_encode(["success" => true, "message" => "Login successful"]);
+        $email = $data['email'];
+        $password = $data['password'];
+        if ($this->userModel->login($email, $password)) {
+            echo json_encode(["message" => "Login successful"]);
         } else {
-            echo json_encode(["success" => false, "message" => "Invalid credentials"]);
+            echo json_encode(["message" => "Invalid credentials"]);
         }
-        }
+        
     }
-
+    
     public function logout(){
         session_start();
         session_destroy();
