@@ -32,16 +32,15 @@ class User{
 
     //  Login method
     public function login($email, $password){
-        $sql = "SELECT * FROM users WHERE email = :email";
+        $sql = "SELECT * FROM users WHERE email = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (password_verify($password, $user['password'])) {
+        if (password_verify($password, $user['password']) && $user) {
+            return $user;
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
-            return true;
         }
         return false;
     }
