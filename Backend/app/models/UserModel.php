@@ -22,12 +22,24 @@ class User{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    // Register New User
-    public function register($name, $email, $password, $phone , $role){
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
-        $sql = "INSERT INTO users (name, email, password, phone , role) VALUES (:name, :email, :password,:phone ,:role)";
-        $stmt = $this->conn->prepare($sql);
-        return $stmt->execute(['name' => $name, 'email' => $email, 'password' => $hashedPassword,'phone'=> $phone , 'role' => $role]);
+    // Register  user model
+    public function register($name, $email, $phone , $role, $password){
+        try {
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $sql = "INSERT INTO users (name, email, password, phone , role) VALUES (:name, :email, :password,:phone ,:role)";
+            $stmt = $this->conn->prepare($sql);
+            
+            return $stmt->execute([
+                ':name' => $name,
+                ':email' => $email,
+                ':password' => $hashedPassword,
+                ':phone' => $phone,
+                ':role' => $role
+            ]);
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+       
     }
 
     //  Login method
