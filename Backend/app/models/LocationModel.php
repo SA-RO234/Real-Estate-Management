@@ -5,5 +5,4 @@
      public $id;
      public $city;
      public $country;
-
  }
