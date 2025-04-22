@@ -43,9 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root {
-  --background: oklch(1 0 0); /* Was: 0 0% 100% */
-  --foreground: oklch(0.205 0.07 260.8); /* Was: 222.2 84% 4.9% */
+:root { /* Was: 0 0% 100% */ /* Was: 222.2 84% 4.9% */
   --card: oklch(1 0 0); /* Was: 0 0% 100% */
   --card-foreground: oklch(0.205 0.07 260.8); /* Was: 222.2 84% 4.9% */
   --popover: oklch(1 0 0); /* Was: 0 0% 100% */
@@ -77,6 +75,8 @@
   --sidebar-accent-foreground: hsl(240 5.9% 10%);
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
 }
 
 .dark {
