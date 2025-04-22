@@ -34,6 +34,8 @@ const Register = ({
 }: RegisterPageProps) => {
   
     useEffect(()=>{
+
+      
         
     })
    

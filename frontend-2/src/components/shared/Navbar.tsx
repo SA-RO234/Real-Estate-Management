@@ -1,5 +1,5 @@
 import { Book, Menu, Sparkle, Sunset, Trees, Zap } from "lucide-react";
-
+import "./Navbar.scss";
 import {
   Accordion,
   AccordionContent,
@@ -36,7 +36,7 @@ interface Navbar1Props {
     url: string;
     src: string;
     alt: string;
-    title: string;
+    title?: string;
   };
   menu?: MenuItem[];
   auth?: {
@@ -58,93 +58,57 @@ interface Navbar1Props {
 const Navbar = ({
   logo = {
     url: "/",
-    src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
+    src: "https://res.cloudinary.com/dnfahcxo3/image/upload/v1745082558/9c2d1352-17cf-40b9-b71d-f6f2393ec6a0.png",
     alt: "logo",
-    title: "JustHome",
   },
   menu = [
     { title: "Home", url: "/" },
     {
-      title: "Products",
-      url: "#",
-      items: [
-        {
-          title: "Blog",
-          description: "The latest industry news, updates, and info",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Company",
-          description: "Our mission is to innovate and empower the world",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Careers",
-          description: "Browse job listing and discover our workspace",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Support",
-          description:
-            "Get in touch with our support team or visit our community forums",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
-        },
-      ],
+      title: "About us",
+      url: "/about",
     },
-
     {
       title: "Listing",
       url: "/listing",
     },
     {
-      title: "About us",
-      url: "/about",
+      title: "FAQs",
+      url: "/faq",
+    },
+    {
+      title: "Contact us",
+      url: "/contactus",
     },
   ],
   auth = {
     login: { title: "Login", url: "/login" },
     dashboard: { title: "Dashboard", url: "/dashboard" },
-    signup: { title: "Sign up", url: "#" },
+    signup: { title: "Register", url: "#" },
   },
 }: Navbar1Props) => {
   return (
     <nav className="border-b w-full sticky top-0 z-[100] bg-background shadow-sm transition-colors duration-200 ease-in-out">
       <div className="container mx-auto px-4 py-2">
         {/* Desktop Menu */}
-        <nav className="hidden justify-between lg:flex">
-          <div className="flex items-center gap-6">
-            {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8" alt={logo.alt} />
-              <span className="text-lg font-semibold tracking-tighter">
-                {logo.title}
-              </span>
-            </a>
-            <div className="flex items-center">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </div>
+        <nav className="hidden justify-between items-center h-[100px] lg:flex">
+          {/* Logo */}
+          <a href={logo.url} className="flex items-center gap-2">
+            <img src={logo.src} className="h-full w-[100px]" alt={logo.alt} />
+            <span className="text-lg font-semibold tracking-tighter">
+              {logo.title}
+            </span>
+          </a>
+          <div className="flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {menu.map((item) => renderMenuItem(item))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
+
           <div className="flex gap-2">
             <Button asChild>
-              <a href={auth.login.url}>{auth.login.title}</a>
-            </Button>
-            {/* <Button asChild>
-              <a href={auth.signup.url}>{auth.signup.title}</a>
-            </Button> */}
-            <Button asChild>
-              <a href={auth.dashboard.url}>
-                <Sparkle />
-
-                {auth.dashboard.title}
-              </a>
+              <a className="btn" href={auth.login.url}>{auth.signup.title}</a>
             </Button>
           </div>
         </nav>
@@ -183,9 +147,6 @@ const Navbar = ({
                     <Button asChild>
                       <a href={auth.login.url}>{auth.login.title}</a>
                     </Button>
-                    {/* <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
-                    </Button> */}
                     <Button asChild>
                       <a href={auth.dashboard.url}>{auth.dashboard.title}</a>
                     </Button>
@@ -207,7 +168,7 @@ const renderMenuItem = (item: MenuItem) => {
         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
         <NavigationMenuContent className="bg-popover text-popover-foreground">
           {item.items.map((subItem) => (
-            <NavigationMenuLink asChild key={subItem.title} className="w-80">
+            <NavigationMenuLink href={subItem.url} asChild key={subItem.title} className="w-80">
               <SubMenuLink item={subItem} />
             </NavigationMenuLink>
           ))}
