@@ -1,5 +1,4 @@
 "use client";
-
 import SectionTitle from "@/components/shared/SectionTitle";
 import React, { useState } from "react";
 import PropertyList from "./PropertyList";
