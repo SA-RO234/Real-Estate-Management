@@ -4,9 +4,11 @@ require_once '../../config/database.php';
 header("Content-Type: application/json"); // Ensure JSON response
 
 
-class PropertyController{
+class PropertyController
+{
     private $property;
-    public function __construct(){
+    public function __construct()
+    {
         $database = new Database();
         $db = $database->getConnection();
         $this->property = new PropertyModel($db);
@@ -14,7 +16,8 @@ class PropertyController{
 
     // Handle GET Request for all property
     // Controller Method to Handle GET Request for All Properties
-    public function getProperties(){
+    public function getProperties()
+    {
         try {
             $stmt = $this->property->getAllProperties();
             $num  = $stmt->rowCount();
@@ -25,12 +28,21 @@ class PropertyController{
                     extract($row);
                     $property_item = array(
                         "id" => $id,
-                        "title" => $title,
-                        "price" => $price,
-                        "location" => $location,
-                        "description" => $description,
                         "user_id" => $user_id,
-                        "created_at" => $created_at
+                        "title" => $title,
+                        "description" => $description,
+                        "price" => $price,
+                        "bedrooms" => $bedrooms,
+                        "bathrooms" => $bathrooms,
+                        "square_feet" => $square_feet,
+                        "lot_size" => $lot_size,
+                        "year_built" => $year_built,
+                        "status" => $status,
+                        "listed_date" => $listed_date,
+                        "hoa_fees" => $hoa_fees,
+                        "location_id" => $location_id,
+                        "city" => $city,
+                        "country" => $country,
                     );
                     array_push($properties_arr, $property_item);
                 }
@@ -45,7 +57,8 @@ class PropertyController{
 
 
     // Handle GET request for a single property by ID
-    public function getPropertyById($id){
+    public function getPropertyById($id)
+    {
         $properties = $this->property->getPropertyById($id);
         if ($properties) {
             echo json_encode($properties);  // Return property data in JSON format
@@ -55,32 +68,35 @@ class PropertyController{
     }
 
     // //   Handle  POST request to add new property 
-    public function addProperty(){
+    public function addProperty()
+    {
         $data = json_decode(file_get_contents("php://input"), true); // get data from request body
         $this->property->addProperty($data['title'], $data['description'], $data['price'], $data['location']);
         echo json_encode(["message" => "Property added successfully ! "]);
     }
 
     // //  Handle PUT request to update a property 
-    public function updateProperty(){
+    public function updateProperty()
+    {
         $data = json_decode(file_get_contents('php://input'), true);
         $this->property->updateProperty($data['id'], $data['title'], $data['description'], $data['price'], $data['location']);
         echo json_encode(['message' => "Property Updated Successfuly ! "]);
     }
 
     // //  Handle DELETE request to delete for property 
-    public function deleteProperty(){
+    public function deleteProperty()
+    {
         // Get JSON input and decode it
         $data = json_decode(file_get_contents('php://input'), true);
-      
+
         // Check if the data is valid and contains an ID
         if (!isset($data['id'])) {
             echo json_encode(['error' => "Property ID is required."]);
             http_response_code(400); // Bad Request
             return;
         }
-          $id = intval($_GET['id']);
-          echo("ID : ".$id);
+        $id = intval($_GET['id']);
+        echo ("ID : " . $id);
         // Attempt to delete the property
         if ($this->property->deleteProperty($id)) {
             echo json_encode(['message' => "Property deleted successfully!"]);
