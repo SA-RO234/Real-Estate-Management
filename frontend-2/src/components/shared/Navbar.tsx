@@ -83,7 +83,7 @@ const Navbar = ({
   auth = {
     login: { title: "Login", url: "/login" },
     dashboard: { title: "Dashboard", url: "/dashboard" },
-    signup: { title: "Register", url: "#" },
+    signup: { title: "Register", url: "/signup" },
   },
 }: Navbar1Props) => {
   return (
@@ -108,7 +108,14 @@ const Navbar = ({
 
           <div className="flex gap-2">
             <Button asChild>
-              <a className="btn" href={auth.login.url}>{auth.signup.title}</a>
+              <a className="btn btn-white" href={auth.login.url}>
+                {auth.login.title}
+              </a>
+            </Button>
+            <Button asChild>
+              <a className="btn" href={auth.signup.url}>
+                {auth.signup.title}
+              </a>
             </Button>
           </div>
         </nav>
@@ -148,7 +155,7 @@ const Navbar = ({
                       <a href={auth.login.url}>{auth.login.title}</a>
                     </Button>
                     <Button asChild>
-                      <a href={auth.dashboard.url}>{auth.dashboard.title}</a>
+                      <a href={auth.signup.url}>{auth.signup.title}</a>
                     </Button>
                   </div>
                 </div>

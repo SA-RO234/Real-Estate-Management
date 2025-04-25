@@ -1,15 +1,15 @@
 import React from "react";
-import {DataTablePerperty } from "@/components/common/admin/data-table";
+import {DataTableUsers } from "@/components/common/admin/data-table";
 import data from "../dashboard/data.json";
-const PropertyPage = () => {
+const UsersPage = () => {
   return (
     <div>
       <h2 className="pb-2 text-3xl font-semibold tracking-tight transition-colors">
-        Property Management
+        Users Management
       </h2>
-       <DataTablePerperty data={data} />
+      <DataTableUsers data={data} />
     </div>
   );
 };
 
-export default PropertyPage;
+export default UsersPage;

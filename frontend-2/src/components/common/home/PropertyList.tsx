@@ -26,7 +26,7 @@ const PropertyList: React.FC<PropertyListProps> = ({ properties }) => {
   return (
     <div className="w-full max-w-full cursor-pointer mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {properties.map((property) => (
-        <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 p-0">
+        <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-1 p-0">
           <div className="relative aspect-video w-full overflow-hidden">
             {property.status && property.status.length > 0 && (
               <Badge

@@ -76,3 +76,13 @@ export interface PaginatedPropertiesResponse {
     totalItems: number;
   };
 }
+
+//  User
+
+export interface UsersRegister {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  role: string;
+}
