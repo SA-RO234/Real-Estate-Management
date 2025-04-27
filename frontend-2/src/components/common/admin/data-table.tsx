@@ -448,7 +448,7 @@ export function DataTablePerperty({
                   </TableRow>
                 ))}
               </TableHeader>
-              <TableBody className="**:data-[slot=table-cell]:first:w-8 border border-red-700  ">
+              <TableBody className="**:data-[slot=table-cell]:first:w-8  ">
                 {table.getRowModel().rows?.length ? (
                   <SortableContext
                     items={dataIds}
