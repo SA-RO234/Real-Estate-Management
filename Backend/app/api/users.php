@@ -17,12 +17,18 @@ $routes = [
         }
     },
     "POST" => function () use ($usersController) {
-        if (isset($_POST['email']) && isset($_POST['password'])) {
+        $input = json_decode(file_get_contents("php://input"), true);
+        // Check if the request is for registration (requires name, phone, role)
+        if (isset($input['name']) && isset($input["email"]) && isset($input['phone']) && isset($input["password"]) && isset($input['role'])) {
+            $usersController->register($input);
+        }
+        // Otherwise, treat it as a login request (requires email and password)
+        elseif (isset($input['email']) && isset($input['password'])) {
             $usersController->login();
         } else {
-            $usersController->register();
+            echo json_encode(["message" => "Invalid request: Missing required fields."]);
         }
-    }
+    },
 ];
 if (array_key_exists($method, $routes)) {
     $routes[$method]();

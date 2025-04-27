@@ -3,6 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bokor&family=Chenla&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Liter&family=Lora:ital,wght@0,400..700;1,400..700&family=Moul&family=Moulpali&family=Noto+Sans+Hanunoo&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Siemreap&family=Sora:wght@100..800&family=Tektur:wght@400..900&display=swap');
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -43,9 +45,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root {
-  --background: oklch(1 0 0); /* Was: 0 0% 100% */
-  --foreground: oklch(0.205 0.07 260.8); /* Was: 222.2 84% 4.9% */
+:root { /* Was: 0 0% 100% */ /* Was: 222.2 84% 4.9% */
   --card: oklch(1 0 0); /* Was: 0 0% 100% */
   --card-foreground: oklch(0.205 0.07 260.8); /* Was: 222.2 84% 4.9% */
   --popover: oklch(1 0 0); /* Was: 0 0% 100% */
@@ -77,6 +77,8 @@
   --sidebar-accent-foreground: hsl(240 5.9% 10%);
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
 }
 
 .dark {
@@ -122,4 +124,19 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+*{
+  font-family: "Poppins", sans-serif !important;
+}
+
+.navbar-Title{
+  font-family: "Sora", sans-serif !important;
+  /* font-weight: 500 !important; */
+  font-size: 15px !important;
+}
+
+.Active-Style{
+   /* font-size: 20px !important; */
+   font-weight: 600 !important;
 }

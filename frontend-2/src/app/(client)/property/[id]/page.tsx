@@ -565,7 +565,7 @@ const PropertyDetailPage = () => {
       </div>
 
       {/* Images Overview */}
-      <PropertyImageOverview images={images} />
+      {/* <PropertyImageOverview images={images} /> */}
 
       {/* Explore More */}
       <h2 className="text-2xl font-bold mt-12">Explore More</h2>
