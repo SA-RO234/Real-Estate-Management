@@ -26,7 +26,7 @@ class PropertyModel{
     //   Retrieve all property from database 
     public function getAllproperties(){
         try {
-             $query = "SELECT * FROM properties INNER JOIN locations ON properties.location_id = locations.id";
+             $query = "SELECT * FROM $this->table_name INNER JOIN locations ON properties.location_id = locations.id";
              $stmt = $this->conn->prepare($query);
              $stmt->execute();
             return $stmt;
@@ -35,6 +35,8 @@ class PropertyModel{
         }
        
     }
+
+    
 
     //  Retrieve  a single property by id ;
     public function getPropertybyID ($id){
