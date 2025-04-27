@@ -10,7 +10,7 @@ class User{
     public function getAllUsers(){
         $sql = "SELECT * FROM users";
         $result = $this->conn->query($sql);
-        return $result->fetch(PDO::FETCH_ASSOC);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
     //    get users by ID 
@@ -64,15 +64,41 @@ class User{
     }
 
     //  update model
-
-    function UpdateUserbyID($id)
+    public function updateUserByID($id, $data)
     {
-        $data = json_decode(file_get_contents("php:/input", true));
-        $stmt = $this->conn->prepare("UPDATE users SET  name = ? , email = ? , password = ? , role = ? WHERE id = ? ");
-        $stmt->bindparam("ssssi", $data['name'], $data['email'], $data['password'], $data['role'], $id);
-        $stmt->execute();
+        try {
+            $fields = [];
+            $params = [];
+            if (isset($data['name'])) {
+                $fields[] = "name = :name";
+                $params[':name'] = $data['name'];
+            }
+            if (isset($data['email'])) {
+                $fields[] = "email = :email";
+                $params[':email'] = $data['email'];
+            }
+            if (isset($data['role'])) {
+                $fields[] = "role = :role";
+                $params[':role'] = $data['role'];
+            }
+            if (isset($data['phone'])) {
+                $fields[] = "phone = :phone";
+                $params[':phone'] = $data['phone'];
+            }
+            if (isset($data['password'])) {
+                $fields[] = "password = :password";
+                $params[':password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+            }
+            if (empty($fields)) return false;
+            $params[':id'] = $id;
+            $sql = "UPDATE users SET " . implode(', ', $fields) . " WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            return $stmt->execute($params);
+        } catch (PDOException $e) {
+            return false;
+        }
     }
-
+ 
     //  Delete model
     function DeleteUser($id){
         $stmt = $this->conn->prepare("DELETE FROM users WHERE id = ?");

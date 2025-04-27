@@ -1,5 +1,8 @@
 <?php
-header("Content-Type :application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json");
 require "../controllers/UserController.php";
 
 
@@ -29,6 +32,17 @@ $routes = [
             echo json_encode(["message" => "Invalid request: Missing required fields."]);
         }
     },
+    "PUT" => function () use ($usersController) {
+        $input = json_decode(file_get_contents("php://input"), true);
+        if (!isset($_GET['id'])) {
+            echo json_encode(["message" => "User ID is required."]);
+            return;
+        }
+        $id = $_GET['id'];
+        echo $id;
+        $usersController->updateUser($id, $input);
+    },
+
 ];
 if (array_key_exists($method, $routes)) {
     $routes[$method]();
