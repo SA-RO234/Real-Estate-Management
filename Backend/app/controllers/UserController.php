@@ -70,10 +70,26 @@ class UserController
         $users = $this->userModel->getUserByRole($role);
         echo json_encode($users, JSON_PRETTY_PRINT);
     }
-    //  git all user
+    //  get all user
     function getAllUser(){
         header("Content-Type: application/json");
         $users = $this->userModel->getAllUsers();
         echo json_encode($users, JSON_PRETTY_PRINT);
+    }
+
+    //  Update user by ID 
+    public function updateUser($id, $data){
+    
+        if (empty($data['name']) || empty($data['email']) || empty($data['role']) || empty($data['password']) || empty($data['phone'])) {
+            
+            echo json_encode(["message" => "Missing required fields."]);
+            return;
+        }
+        $result = $this->userModel->updateUserByID($id, $data);
+        if ($result) {
+            echo json_encode(["message" => "User updated successfully"]);
+        } else {
+            echo json_encode(["message" => "Error updating user"]);
+        }
     }
 }

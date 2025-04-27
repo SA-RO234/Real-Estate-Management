@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin:*");
+header("Access-Control-Allow-Origin: *");
 header("Content-Type : application/json"); // Ensure response is json 
 header("Access-Control-Allow-Method : GET , POST ,PUT, DELETE");
 
