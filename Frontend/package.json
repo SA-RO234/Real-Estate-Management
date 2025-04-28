@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
-    "@tailwindcss/vite": "^4.0.15",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "daisyui": "^5.0.9",
@@ -21,19 +20,6 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.4.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "recharts": "^2.15.1",
-=======
->>>>>>> b15d6e5ee0ebb6082b853af43af43919c318b37f
-=======
->>>>>>> 14d0758b45f11a1fc295f675c0ae56857dd6eb4c
-=======
->>>>>>> b15d6e5ee0ebb6082b853af43af43919c318b37f
-=======
->>>>>>> 72dddb4224198f51ea1c838510e5a111f8ac87e0
     "sass": "^1.86.0",
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.0.2",
@@ -41,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@tailwindcss/vite": "^4.1.4",
     "@types/node": "^22.13.11",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",

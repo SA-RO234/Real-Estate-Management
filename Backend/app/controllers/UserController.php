@@ -12,11 +12,8 @@ class UserController
         $db = $database->getConnection();
         $this->userModel = new User($db);
     }
-    public function register(){
-        // Get the raw POST body
-        $json = file_get_contents("php://input");
-        $data = json_decode($json, true); // Decode JSON to an associative array
-
+    //  Register controller
+    public function register($data){
         // Check if JSON decoding was successful
         if (json_last_error() !== JSON_ERROR_NONE) {
             echo json_encode(["message" => "Invalid JSON input."]);
@@ -24,9 +21,9 @@ class UserController
         }
 
         // Validate required fields
-        if (empty($data['email']) || empty($data['password']) || empty($data['role']) || empty($data['phone']) || empty($data['name'])){
+        if (empty($data['email']) || empty($data['role']) || empty($data['phone']) || empty($data['name']) || empty($data['password'])) {
             echo json_encode(["message" => "Missing required fields."]);
-            return;
+            return;  // Stop further execution
         }
 
         $email = filter_var($data['email'], FILTER_VALIDATE_EMAIL);
@@ -39,9 +36,9 @@ class UserController
         $role = $data['role'];
         $phone = $data['phone'];
         $name = $data['name'];
-
+        $result = $this->userModel->register($name, $email, $phone, $role, $password);
         // Call the model to register the user
-        if ($this->userModel->register($name, $email, $password, $phone, $role)) {
+        if ($result === true) {
             echo json_encode(["message" => "User registered successfully!"]);
         } else {
             echo json_encode(["message" => "Error registering user."]);
@@ -73,10 +70,26 @@ class UserController
         $users = $this->userModel->getUserByRole($role);
         echo json_encode($users, JSON_PRETTY_PRINT);
     }
-    //  git all user
+    //  get all user
     function getAllUser(){
         header("Content-Type: application/json");
         $users = $this->userModel->getAllUsers();
         echo json_encode($users, JSON_PRETTY_PRINT);
+    }
+
+    //  Update user by ID 
+    public function updateUser($id, $data){
+    
+        if (empty($data['name']) || empty($data['email']) || empty($data['role']) || empty($data['password']) || empty($data['phone'])) {
+            
+            echo json_encode(["message" => "Missing required fields."]);
+            return;
+        }
+        $result = $this->userModel->updateUserByID($id, $data);
+        if ($result) {
+            echo json_encode(["message" => "User updated successfully"]);
+        } else {
+            echo json_encode(["message" => "Error updating user"]);
+        }
     }
 }

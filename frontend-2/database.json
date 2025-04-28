@@ -26,10 +26,7 @@
       ],
       "bedrooms": 2,
       "bathrooms": 2,
-      "size": {
-        "squareFeet": 1150,
-        "lotSize": "N/A"
-      },
+      "squareFeet": 1150,
       "yearBuilt": 2022,
       "status": [
         "For Sale"

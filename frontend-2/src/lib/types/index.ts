@@ -12,15 +12,8 @@ export interface PropertyType {
   description: string;
   images: string[];
   price: number;
-  location: {
-    address: string;
-    city: string;
-    state: string;
-    zipcode: string;
-    country: string;
-    latitude: number;
-    longitude: number;
-  };
+  city: string;
+  country: string;
   category: Category[];
   bedrooms: number;
   bathrooms: number;
@@ -82,4 +75,14 @@ export interface PaginatedPropertiesResponse {
     totalPages: number;
     totalItems: number;
   };
+}
+
+//  User
+
+export interface UsersRegister {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  role: string;
 }

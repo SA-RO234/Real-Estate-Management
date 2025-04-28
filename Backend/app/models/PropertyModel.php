@@ -2,13 +2,22 @@
 class PropertyModel{
     private $conn ;
     private $table_name = "properties";
-    public $id;
-    public $title;
-    public $price;
-    public $description;
-    public $location;
-    public $created_at;
-    public $users_id;
+    public $id;           // int, not null, auto_increment
+    public $user_id;      // int, not null (renamed from $users_id)
+    public $title;        // varchar(255), not null
+    public $description;  // text, nullable
+    public $price;        // decimal(12,2), not null
+    public $bedrooms;     // int, nullable
+    public $bathrooms;    // int, nullable
+    public $square_feet;  // int, nullable
+    public $lot_size;     // varchar(50), nullable
+    public $year_built;   // int, nullable
+    public $status;       // varchar(50), nullable
+    public $listed_date;  // date, nullable (replacing $created_at)
+    public $hoa_fees;     // decimal(10,2), nullable
+    public $location_id;  // int, nullable (replacing $location)
+    public $city;         // varchar(100), nullable (renamed from $location)
+    public $country;      // varchar(100), nullable (renamed from $location)
 
     public function __construct($database){
         $this->conn = $database;
@@ -17,7 +26,7 @@ class PropertyModel{
     //   Retrieve all property from database 
     public function getAllproperties(){
         try {
-             $query = "SELECT * FROM properties";
+             $query = "SELECT * FROM $this->table_name INNER JOIN locations ON properties.location_id = locations.id";
              $stmt = $this->conn->prepare($query);
              $stmt->execute();
             return $stmt;
@@ -26,6 +35,8 @@ class PropertyModel{
         }
        
     }
+
+    
 
     //  Retrieve  a single property by id ;
     public function getPropertybyID ($id){

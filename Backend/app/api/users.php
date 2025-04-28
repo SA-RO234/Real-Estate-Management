@@ -1,5 +1,8 @@
 <?php
-header("Content-Type :application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json");
 require "../controllers/UserController.php";
 
 
@@ -18,13 +21,28 @@ $routes = [
     },
     "POST" => function () use ($usersController) {
         $input = json_decode(file_get_contents("php://input"), true);
-
-        if (isset($input['email']) && isset($input['password'])) {
+        // Check if the request is for registration (requires name, phone, role)
+        if (isset($input['name']) && isset($input["email"]) && isset($input['phone']) && isset($input["password"]) && isset($input['role'])) {
+            $usersController->register($input);
+        }
+        // Otherwise, treat it as a login request (requires email and password)
+        elseif (isset($input['email']) && isset($input['password'])) {
             $usersController->login();
         } else {
-            $usersController->register();
+            echo json_encode(["message" => "Invalid request: Missing required fields."]);
         }
-    }
+    },
+    "PUT" => function () use ($usersController) {
+        $input = json_decode(file_get_contents("php://input"), true);
+        if (!isset($_GET['id'])) {
+            echo json_encode(["message" => "User ID is required."]);
+            return;
+        }
+        $id = $_GET['id'];
+        echo $id;
+        $usersController->updateUser($id, $input);
+    },
+
 ];
 if (array_key_exists($method, $routes)) {
     $routes[$method]();

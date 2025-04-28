@@ -18,7 +18,10 @@ import {
   ListIcon,
   SearchIcon,
   SettingsIcon,
+  HousePlus,
   UsersIcon,
+  List,
+  PlusCircle
 } from "lucide-react";
 
 import { NavDocuments } from "@/components/common/admin/nav-documents";
@@ -50,72 +53,37 @@ const data = {
     {
       title: "Property",
       url: "/property",
-      icon: ListIcon,
+      icon: HousePlus,
+      children: [
+        { title: "List Property", url: "/property", icon: List },
+        {
+          title: "Add Property",
+          url: "/property/add",
+          icon: PlusCircle,
+        },
+      ],
     },
     {
-      title: "Analytics",
-      url: "/analytics",
-      icon: BarChartIcon,
+      title: "Users",
+      url: "/users",
+      icon: UsersIcon,
+      children: [
+        { title: "All Users", url: "/users", icon: List },
+        { title: "Add User", url: "/users/add", icon: PlusCircle },
+      ],
     },
-    {
-      title: "Rent",
-      url: "/rent",
-      icon: House,
-    },
-    {
-      title: "Buy",
-      url: "/buy",
-      icon: HandCoins,
-    },
+    // {
+    //   title: "Rent",
+    //   url: "/rent",
+    //   icon: House,
+    // },
+    // {
+    //   title: "Buy",
+    //   url: "/buy",
+    //   icon: HandCoins,
+    // },
   ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: CameraIcon,
-      isActive: true,
-      url: "/capture",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: FileTextIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: FileCodeIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-  ],
+
   navSecondary: [
     {
       title: "Settings",
@@ -153,26 +121,24 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const Navbar = {
+    url: "/dashboard",
+    src: "https://res.cloudinary.com/dnfahcxo3/image/upload/v1745082558/9c2d1352-17cf-40b9-b71d-f6f2393ec6a0.png",
+    alt: "logo",
+  };
   return (
     <Sidebar collapsible="offcanvas" {...props}>
-      <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:!p-1.5"
-            >
-              <a href="#">
-                <ArrowUpCircleIcon className="h-5 w-5" />
-                <span className="text-base font-semibold">JustHome</span>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarHeader>
+      <SidebarMenu className="w-[100px] 0 h-[100px]">
+        <a
+          href={Navbar.url}
+          className="h-[100%] w-[100%]"
+        >
+          <img src={Navbar.src} alt="" className="w-full" />
+        </a>
+      </SidebarMenu>
+
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>

@@ -58,7 +58,7 @@ const PropertyPage = () => {
   return (
     <div>
       <h2 className="pb-2 text-3xl font-semibold tracking-tight transition-colors">
-        Property
+        Property Management
       </h2>
       <div className="min-h-screen bg-gray-100">
         {/* <Navbar /> */}
