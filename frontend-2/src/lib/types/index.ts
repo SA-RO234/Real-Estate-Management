@@ -86,3 +86,17 @@ export interface UsersRegister {
   password: string;
   role: string;
 }
+
+//  Propety Card  ( Dashboard )
+
+export interface Property {
+  id: number;
+  title: string;
+  image_url: string;
+  city: string;
+  country: string;
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  square_feet: number;
+}

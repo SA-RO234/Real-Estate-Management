@@ -4,7 +4,7 @@ import data from "../dashboard/data.json";
 const UsersPage = () => {
   return (
     <div>
-      <h2 className="pb-2 text-3xl font-semibold tracking-tight transition-colors">
+      <h2 className="pb-2 text-3xl font- semibold tracking-tight transition-colors">
         Users Management
       </h2>
       <DataTableUsers data={data} />
