@@ -1,0 +1,18 @@
+.CardNumberProperty{
+  content: "";
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: #fb8500;
+  position: absolute;
+  right: 250px;
+  top: 0;
+  transition: right 0.4s 0s linear;
+  z-index: 1000;
+}
+// .CardNumberProperty:hover{
+// //   right: -160px;
+// }
+// .CardNumberProperty:hover {
+//   color: #023047;
+// }

@@ -1,11 +1,9 @@
-import React from 'react'
+import PropertyForm from "@/components/ui/formAddProperty";
+import React from "react";
 
 const add = () => {
   return (
-    <div>
-        
-    </div>
-  )
-}
+  );
+};
 
-export default add
+export default add;
