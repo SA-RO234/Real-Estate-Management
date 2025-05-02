@@ -421,11 +421,6 @@ export function DataTablePerperty({
         value="outline"
         className="relative  flex flex-col gap-4 overflow-auto"
       >
-        {/*  All Card Container */}
-       
-
-
-
         <div className="flex items-center justify-between px-4  ">
           <div className="hidden flex-1 text-sm text-muted-foreground lg:flex">
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
