@@ -9,6 +9,8 @@ import { fetchProperties } from "@/lib/api/api";
 import { Loader2 } from "lucide-react";
 import PaginationControls from "@/components/shared/PaginationControl";
 import { useGetPropertiesQuery } from "@/hooks/useGetPropertiesQuery";
+import PropertybyCityContainer from "./PropertyByCity/PropertybyCityContainer";
+import "./HomeForYou.scss";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -42,7 +44,7 @@ const HomeForYou = () => {
 
   //   --- Render Logic ---
   return (
-    <section className="w-[90%] m-[32px_auto] order-2">
+    <section className="w-[90%] m-[32px_auto] order-2 ">
       <SectionTitle
         title="Newly Developed Condominium Projects in Phnom Penh"
         subTitle="One of the surest ways to grow your money is by investing in pre-construction or under-construction condos. Your investment increases value from the first day you purchase the unit and will continue to appreciate until you decide to sell it. This long-term investment plan is an excellent way to earn passive income. Click here to get all condominium project in Phnom Penh capital Cambodia."
@@ -63,8 +65,6 @@ const HomeForYou = () => {
       {!isLoading && !isError && queryResponse?.data && (
         <PropertyList properties={queryResponse.data} />
       )}
-      {/* <PropertyList properties={homeForYouData} /> */}
-      {/* Empty State (after successful load but no data) */}
       {!isLoading &&
         !isError &&
         (!queryResponse?.data || queryResponse.data.length === 0) && (
@@ -72,16 +72,18 @@ const HomeForYou = () => {
             No properties found for this page.
           </p>
         )}
-      {/* Pagination Controls */}
-      {/* Only show if successfully loaded and more than one page */}
+
       {!isLoading && !isError && totalPages > 1 && (
-        <PaginationControls
-          page={page}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-          isFetching={isFetching}
-        />
-      )}{" "}
+        <div className="w-[10%] m-[50px_auto]">
+          <button className="Show-more ">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Show More</span>
+          </button>
+        </div>
+      )}
+      <PropertybyCityContainer />
     </section>
   );
 };

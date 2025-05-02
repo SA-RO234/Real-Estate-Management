@@ -140,3 +140,12 @@
    /* font-size: 20px !important; */
    font-weight: 600 !important;
 }
+
+/* Hide circular "N" icon */
+div[title="Profile"] {
+  display: none !important;
+}
+
+button[aria-label="Open Tanstack query devtools"] {
+  display: none !important;
+}

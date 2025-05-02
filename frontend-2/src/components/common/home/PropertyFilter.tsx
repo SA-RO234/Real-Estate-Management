@@ -107,17 +107,8 @@ const PropertyFilter = () => {
   }
 
   return (
-    <div className="absolute md:bottom-8 left-0 right-0 max-w-5xl w-full mx-auto z-50 px-4">
-      <div className="md:my-32 my-16  text-center text-muted w-full ">
-        <h2 className="mb-4 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-          The Most Trusted and Effective Real Estate Partner in Cambodia!
-        </h2>
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          ជាដៃគូអចលនទ្រព្យ ដ៏គួរឱ្យទុកចិត្ត និងប្រកបដោយប្រសិទ្ធិភាពខ្ពស់បំផុត
-          នៅកម្ពុជា
-        </h1>
-      </div>
-      <Card className="max-w-3xl mx-auto">
+    <div className="absolute bottom-[-100px] left-0 right-0 w-[80%] mx-auto z-50 px-4">
+      <Card>
         <CardHeader>
           <h2>Find Your Property</h2>
         </CardHeader>

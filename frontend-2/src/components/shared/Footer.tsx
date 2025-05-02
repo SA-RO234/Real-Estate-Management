@@ -25,12 +25,11 @@ interface FooterProps {
 }
 const Footer = ({
   logo = {
-    src: "https://www.shadcnblocks.com/images/block/block-1.svg",
+    src: "https://res.cloudinary.com/dnfahcxo3/image/upload/v1745082558/9c2d1352-17cf-40b9-b71d-f6f2393ec6a0.png",
     alt: "blocks for shadcn/ui",
     title: "JustHome",
-    url: "https://www.shadcnblocks.com",
+    url: "/",
   },
-  tagline = "Your dream home is just a click away",
   menuItems = [
     {
       title: "What we do",
@@ -75,12 +74,11 @@ const Footer = ({
                     src={logo.src}
                     alt={logo.alt}
                     title={logo.title}
-                    className="h-10"
+                    className="h-[150px] w-[150px]"
                   />
                 </Link>
-                <p className="text-xl font-semibold">{logo.title}</p>
               </div>
-              <p className="mt-4 font-bold">{tagline}</p>
+            
             </div>
             {menuItems.map((section, sectionIdx) => (
               <div key={sectionIdx}>

@@ -10,19 +10,18 @@ export interface PropertyType {
   id: number;
   title: string;
   description: string;
-  images: string[];
+  image_url: string;
+  imageForAd: number;
   price: number;
   city: string;
   country: string;
   category: Category[];
   bedrooms: number;
   bathrooms: number;
-  size: {
-    squareFeet: number;
-    lotSize?: string;
-  };
+  square_feet: number;
+  lotSize?: string;
   yearBuilt: number;
-  status: PropertyStatus[];
+  propertyfor: PropertyStatus;
   amenities: string[];
   features: {
     flooring: string;

@@ -87,7 +87,7 @@ const Navbar = ({
   },
 }: Navbar1Props) => {
   return (
-    <nav className="border-b w-full sticky top-0 z-[100] bg-background shadow-sm transition-colors duration-200 ease-in-out">
+    <nav className="border-b w-full sticky  top-0 z-[1000] bg-background shadow-sm transition-colors duration-200 ease-in-out">
       <div className="container mx-auto px-4 py-2">
         {/* Desktop Menu */}
         <nav className="hidden justify-between items-center h-[100px] lg:flex">
@@ -175,7 +175,12 @@ const renderMenuItem = (item: MenuItem) => {
         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
         <NavigationMenuContent className="bg-popover text-popover-foreground">
           {item.items.map((subItem) => (
-            <NavigationMenuLink href={subItem.url} asChild key={subItem.title} className="w-80">
+            <NavigationMenuLink
+              href={subItem.url}
+              asChild
+              key={subItem.title}
+              className="w-80"
+            >
               <SubMenuLink item={subItem} />
             </NavigationMenuLink>
           ))}
@@ -188,7 +193,7 @@ const renderMenuItem = (item: MenuItem) => {
     <NavigationMenuItem key={item.title}>
       <NavigationMenuLink
         href={item.url}
-        className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
+        className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background  px-4 py-2  font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
       >
         {item.title}
       </NavigationMenuLink>
@@ -227,9 +232,9 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
     >
       <div className="text-foreground">{item.icon}</div>
       <div>
-        <div className="text-sm font-semibold">{item.title}</div>
+        <div className=" font-semibold">{item.title}</div>
         {item.description && (
-          <p className="text-sm leading-snug text-muted-foreground">
+          <p className=" leading-snug text-muted-foreground">
             {item.description}
           </p>
         )}
