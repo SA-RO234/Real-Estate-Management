@@ -4,7 +4,7 @@ class Database{
     private $host = "localhost";
     private $db_name = "real_estatedb";
     private $username = "root";
-    private $password = "";
+    private $password = "Hu@4144%%%*";
     public $conn;
     public function getConnection(){
         $this->conn = null;
