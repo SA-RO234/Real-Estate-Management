@@ -59,7 +59,7 @@ class PropertyController
     // Handle GET request for a single property by ID
     public function getPropertyById($id)
     {
-        $properties = $this->property->getPropertyById($id);
+        $properties = $this->property->getPropertyByID($id);
         if ($properties) {
             echo json_encode($properties);  // Return property data in JSON format
         } else {

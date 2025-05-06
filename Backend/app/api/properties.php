@@ -14,7 +14,7 @@ $request = json_decode(file_get_contents("php://input"), true);
 
 $routes = [
     'GET' => function () use ($properTyController) {
-        if (isset($_GET['id'])){
+        if (isset($_GET['id'])) {
             $properTyController->getPropertyById($_GET['id']);
         } else {
             $properTyController->getProperties();

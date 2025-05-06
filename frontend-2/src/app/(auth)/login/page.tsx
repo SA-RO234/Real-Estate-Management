@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 import { Button } from "@/components/ui/button";
@@ -5,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
+import { useRouter } from "next/navigation";
 
 interface LoginPageProps {
   heading?: string;
@@ -33,6 +37,45 @@ const LoginPage = ({
   signupText = "Don't have an account?",
   signupUrl = "/signup",
 }: LoginPageProps) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch(
+        "http://localhost:8000/Backend/app/api/users.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed");
+      }
+
+      // ✅ Login success — you can store token, redirect, etc.
+      console.log("Login successful:", data);
+      router.push("/property");
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="h-screen w-full flex items-center justify-center">
       <div className="container">
@@ -45,54 +88,63 @@ const LoginPage = ({
               <h1 className="mb-2 text-2xl font-bold">{heading}</h1>
               <p className="text-muted-foreground">{subheading}</p>
             </div>
-            <div>
-              <div className="grid gap-4">
-                <div className="space-y-2">
-                  <Label>Email</Label>
-                  <Input type="email" placeholder="Enter your email" required />
-                </div>
-                <div className="space-y-2">
-                  <Label>Password</Label>
-                  <Input
-                    type="password"
-                    placeholder="Enter your password"
-                    required
-                  />
-                </div>
-                <div className="flex justify-between">
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="remember"
-                      className="border-muted-foreground"
-                    />
-                    <label
-                      htmlFor="remember"
-                      className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Remember me
-                    </label>
-                  </div>
-                  <Link
-                    href="#"
-                    className="text-sm text-primary hover:underline"
-                  >
-                    Forgot password
-                  </Link>
-                </div>
-                <Button type="submit" className="mt-2 w-full">
-                  {loginText}
-                </Button>
-                <Button variant="outline" className="w-full">
-                  <FcGoogle className="mr-2 size-5" />
-                  {googleText}
-                </Button>
+
+            <form onSubmit={handleLogin} className="grid gap-4">
+              <div className="space-y-2">
+                <Label>Email</Label>
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
-              {/* <div className="mx-auto mt-8 flex justify-center gap-1 text-sm text-muted-foreground">
-                <p>{signupText}</p>
-                <Link href={signupUrl} className="font-medium text-primary">
-                  Sign up
+              <div className="space-y-2">
+                <Label>Password</Label>
+                <Input
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="flex justify-between">
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="remember" className="border-muted-foreground" />
+                  <label
+                    htmlFor="remember"
+                    className="text-sm leading-none font-medium"
+                  >
+                    Remember me
+                  </label>
+                </div>
+                <Link href="#" className="text-sm text-primary hover:underline">
+                  Forgot password
                 </Link>
-              </div> */}
+              </div>
+
+              {error && (
+                <p className="text-red-500 text-sm text-center">{error}</p>
+              )}
+
+              <Button type="submit" className="mt-2 w-full" disabled={loading}>
+                {loading ? "Logging in..." : loginText}
+              </Button>
+
+              <Button variant="outline" className="w-full">
+                <FcGoogle className="mr-2 size-5" />
+                {googleText}
+              </Button>
+            </form>
+
+            {/* Signup redirect */}
+            <div className="mx-auto mt-8 flex justify-center gap-1 text-sm text-muted-foreground">
+              <p>{signupText}</p>
+              <Link href={signupUrl} className="font-medium text-primary">
+                Sign up
+              </Link>
             </div>
           </div>
         </div>
