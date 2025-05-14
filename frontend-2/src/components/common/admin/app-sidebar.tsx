@@ -21,7 +21,8 @@ import {
   HousePlus,
   UsersIcon,
   List,
-  PlusCircle
+  PlusCircle,
+  Mails
 } from "lucide-react";
 
 import { NavDocuments } from "@/components/common/admin/nav-documents";
@@ -71,6 +72,15 @@ const data = {
         { title: "All Users", url: "/users", icon: List },
         { title: "Add User", url: "/users/add", icon: PlusCircle },
       ],
+    },
+    {
+      title: "Messages",
+      url: "/messages",
+      icon: Mails,
+      // children: [
+      //   { title: "All Users", url: "/users", icon: List },
+      //   { title: "Add User", url: "/users/add", icon: PlusCircle },
+      // ],
     },
     // {
     //   title: "Rent",
@@ -127,12 +137,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     alt: "logo",
   };
   return (
-    <Sidebar collapsible="offcanvas" {...props}>
-      <SidebarMenu className="w-[100px] 0 h-[100px]">
-        <a
-          href={Navbar.url}
-          className="h-[100%] w-[100%]"
-        >
+    <Sidebar
+      collapsible="offcanvas"
+      {...props}
+    >
+      <SidebarMenu className="w-[100px]  0 h-[100px]">
+        <a href={Navbar.url} className="h-[100%] w-[100%]">
           <img src={Navbar.src} alt="" className="w-full" />
         </a>
       </SidebarMenu>

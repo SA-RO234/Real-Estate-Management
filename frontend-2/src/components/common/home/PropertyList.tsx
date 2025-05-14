@@ -84,7 +84,7 @@ const PropertyList: React.FC<PropertyListProps> = ({ properties }) => {
               </div>
               <h2
                 className="text-[25px] font-semibold leading-tight"
-                // Tooltip for long titles
+                
               >
                 {property.title}
               </h2>

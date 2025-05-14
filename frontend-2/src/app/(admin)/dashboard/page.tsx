@@ -1,6 +1,7 @@
 import { ChartAreaInteractive } from "@/components/common/admin/chart-area-interactive";
 // import {DataTableUsers } from "@/components/common/admin/data-table";
 import { SectionCards } from "@/components/common/admin/section-cards";
+import Messages from "@/components/common/admin/messages";
 import data from "./data.json";
 
 export default function DashboardPage() {
@@ -11,8 +12,10 @@ export default function DashboardPage() {
       </h2>
       <div className="flex flex-col gap-4 md:gap-6">
         <SectionCards />
-        <ChartAreaInteractive />
-       
+        <div className="flex gap-x-5">
+          <ChartAreaInteractive />
+          <Messages />
+        </div>
       </div>
     </div>
   );

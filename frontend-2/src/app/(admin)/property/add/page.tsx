@@ -2,8 +2,7 @@ import PropertyForm from "@/components/ui/formAddProperty";
 import React from "react";
 
 const add = () => {
-  return (
-  );
+  return {};
 };
 
 export default add;
