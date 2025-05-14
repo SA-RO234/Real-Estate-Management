@@ -6,17 +6,21 @@ header("Access-Control-Allow-Method : GET , POST ,PUT, DELETE");
 require_once "../controllers/PropertyController.php";
 require_once "../../config/database.php";
 
-
-
 $properTyController = new PropertyController();
 $method = $_SERVER["REQUEST_METHOD"];
 $request = json_decode(file_get_contents("php://input"), true);
 
 $routes = [
     'GET' => function () use ($properTyController) {
-        if (isset($_GET['id'])){
+        if (isset($_GET['ads'])) {
+            $properTyController->getPropertyforAd();
+        } elseif (isset($_GET['id'])) {
             $properTyController->getPropertyById($_GET['id']);
-        } else {
+        } elseif (isset($_GET['typeCount'])) {
+            $properTyController->getPropertyTypeCount();
+        } elseif (isset($_GET['byCity'])) {
+            $properTyController->getPropertyOfEachCity();
+        }else {
             $properTyController->getProperties();
         }
     },

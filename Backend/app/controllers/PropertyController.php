@@ -16,8 +16,7 @@ class PropertyController
 
     // Handle GET Request for all property
     // Controller Method to Handle GET Request for All Properties
-    public function getProperties()
-    {
+    public function getProperties(){
         try {
             $stmt = $this->property->getAllProperties();
             $num  = $stmt->rowCount();
@@ -37,12 +36,13 @@ class PropertyController
                         "square_feet" => $square_feet,
                         "lot_size" => $lot_size,
                         "year_built" => $year_built,
-                        "status" => $status,
+                        "propertyfor" => $propertyfor,
                         "listed_date" => $listed_date,
                         "hoa_fees" => $hoa_fees,
                         "location_id" => $location_id,
                         "city" => $city,
                         "country" => $country,
+                        "image_url" => $image_url,
                     );
                     array_push($properties_arr, $property_item);
                 }
@@ -106,4 +106,71 @@ class PropertyController
             http_response_code(500); // Internal Server Error
         }
     }
+
+    // Handle GET request for property ads (for advertisement)
+    public function getPropertyforAd()
+    {
+        try {
+            $stmt = $this->property->getPropertyforAd();
+            $num  = $stmt->rowCount();
+            if ($num > 0) {
+                $ads_arr = array();
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    $ads_arr[] = $row;
+                }
+                echo json_encode($ads_arr, JSON_PRETTY_PRINT);
+            } else {
+                echo json_encode(array("message" => "No Property Ads Found."));
+            }
+        } catch (Exception $e) {
+            echo json_encode(array("error" => $e->getMessage()));
+        }
+    }
+
+    //  Handle GET request for property type count
+    public function getPropertyTypeCount()
+    {
+        try {
+            $stmt = $this->property->getPropertyTypeCount();
+            if ($stmt === false) {
+                echo json_encode(['error' => 'Database query failed.']);
+                return;
+            }
+            $result = [];
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $result[] = [
+                    'property_type' => $row['property_type'],
+                    'count' => $row['count'],
+                    'image_url' => $row['image_url']
+                ];
+            }
+            echo json_encode($result, JSON_PRETTY_PRINT);
+        } catch (Exception $e) {
+            echo json_encode(['error' => $e->getMessage()]);
+        }
+    }
+
+    // get Property of each City 
+    public function getPropertyOfEachCity()
+    {
+        try {
+            $stmt = $this->property->getPropertyOfEachCity();
+            if ($stmt === false) {
+                echo json_encode(['error' => 'Database query failed.']);
+                return;
+            }
+            $result = [];
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $result[] = [
+                    'City' => $row['city'],
+                    'Count' => $row['property_count'],
+                    'City_image' => $row['city_image']
+                ];
+            }
+            echo json_encode($result, JSON_PRETTY_PRINT);
+        } catch (Exception $e) {
+            echo json_encode(['error' => $e->getMessage()]);
+        }
+    }
+
 }
