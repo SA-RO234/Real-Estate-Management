@@ -123,7 +123,7 @@ export default function PropertyForm({ initialData = null }) {
             <div className="block-left w-[47%]">
               <div className="[--clr:#1f1f1f] dark:[--clr:#999999] relative flex flex-row items-center">
                 <input
-                  value=""
+                 
                   name="title"
                   required
                   aria-invalid="false"
@@ -165,11 +165,12 @@ export default function PropertyForm({ initialData = null }) {
             <div className="block-right w-[47%] flex flex-col gap-[20px]">
               <div className="[--clr:#1f1f1f] dark:[--clr:#999999] relative flex flex-row items-center">
                 <input
-                  value=""
-                  name="Saleprice"
+                  value={formData.price}
+                  name="price"
                   required
                   aria-invalid="false"
                   placeholder=""
+                  onChange={handleChange}
                   id="salePrice"
                   type="text"
                   className="peer text-black dark:text-white pl-2 h-[40px] min-h-[40px] pr-[40px] leading-normal appearance-none resize-none box-border text-base w-full block text-left border border-solid bg-white dark:bg-zinc-800 rounded-[10px] m-0 p-0 outline-0 focus-visible:outline-0 focus-visible:border-teal-500 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#71717a2e] dark:focus-visible:ring-[#14b8a61a]"
