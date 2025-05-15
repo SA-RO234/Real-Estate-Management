@@ -11,32 +11,20 @@ import useEmblaCarousel from "embla-carousel-react";
 import { UsersRegister } from "@/lib/types";
 import { log } from "console";
 import axios from "axios";
-interface RegisterPageProps {
-  heading?: string;
-  subheading?: string;
-  logo: {
-    url: string;
-    src: string;
-    alt: string;
-  };
-  loginText?: string;
-  googleText?: string;
-  signupText?: string;
-  signupUrl?: string;
-}
-const Register = ({
-  heading = "Register",
-  logo = {
+
+const Register = () => {
+ const heading = "Register";
+ const logo = {
     url: "/",
     src: "https://res.cloudinary.com/dnfahcxo3/image/upload/v1745082558/9c2d1352-17cf-40b9-b71d-f6f2393ec6a0.png",
     alt: "Keystone Logo",
-  },
-  loginText = "You already have account?",
-  googleText = "Log in with Google",
-  signupText = "Submit",
-  signupUrl = "http://localhost:3000/app/api/users.php",
-}: RegisterPageProps) => {
-  const [form, setForm] = useState<UsersRegister>({
+  };
+ const loginText = "You already have account?";
+ const googleText = "Log in with Google";
+ const signupText = "Submit";
+ const loginUrl = '/login';
+
+ const [form, setForm] = useState<UsersRegister>({
     name: "",
     email: "",
     phone: "",
@@ -135,8 +123,8 @@ const Register = ({
                   {signupText}
                 </Button>
                 <Link
-                  href="#"
-                  className="text-sm text-center text-primary hover:underline"
+                  href={loginUrl}
+                  className="text-sm  text-center text-primary hover:underline"
                 >
                   {loginText}
                 </Link>
