@@ -2,7 +2,6 @@
 import SectionTitle from "@/components/shared/SectionTitle";
 import React, { useState } from "react";
 import PropertyList from "./PropertyList";
-import { homeForYouData } from "@/lib/constants/homeForYouData";
 import { PropertyType } from "@/lib/types";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { fetchProperties } from "@/lib/api/api";
