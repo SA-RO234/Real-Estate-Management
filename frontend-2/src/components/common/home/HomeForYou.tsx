@@ -27,22 +27,17 @@ const HomeForYou = () => {
     isFetching,
   } = useGetPropertiesQuery(page, ITEMS_PER_PAGE);
 
-  const totalPages = queryResponse?.pagination.totalPages ?? 1;
 
-  const handlePageChange = (newPage: number) => {
-    console.log(`Changing to page ${newPage}`);
-    if (newPage >= 1 && newPage <= totalPages) {
-      setPage(newPage);
-
-      // Prefetch next page data
-      queryClient.prefetchQuery({
-        queryKey: ["properties", newPage, ITEMS_PER_PAGE],
-        queryFn: () => fetchProperties(newPage, ITEMS_PER_PAGE),
-      });
+  const handleSeeMore = () => {
+    const sessionId = localStorage.getItem("session_id");
+    if (!sessionId) {
+      window.location.href = "/login"; 
+    } else {
+      window.location.href = "/listing"; 
     }
   };
+  
 
-  //   --- Render Logic ---
   return (
     <section className="w-[90%] m-[32px_auto] order-2 ">
       <SectionTitle
@@ -63,7 +58,7 @@ const HomeForYou = () => {
       )}
       {/* Success State (Render PropertyList) */}
       {!isLoading && !isError && queryResponse?.data && (
-        <PropertyList properties={queryResponse.data} />
+        <PropertyList properties={queryResponse.data.slice(0,6)} />
       )}
       {!isLoading &&
         !isError &&
@@ -72,10 +67,9 @@ const HomeForYou = () => {
             No properties found for this page.
           </p>
         )}
-
-      {!isLoading && !isError && totalPages > 1 && (
+      {!isLoading && !isError &&  (
         <div className="w-[10%] m-[50px_auto]">
-          <button className="Show-more ">
+          <button className="Show-more" onClick={handleSeeMore}>
             <span className="circle" aria-hidden="true">
               <span className="icon arrow"></span>
             </span>

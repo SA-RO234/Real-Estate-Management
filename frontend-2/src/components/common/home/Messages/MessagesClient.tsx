@@ -7,18 +7,19 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import axios from "axios";
 import Pusher from "pusher-js";
-const username = "JohnDoe"; // can be dynamic
 
 export default function MessagesClient({
   isOpen = true,
   onClose,
   sender_id,
   receiver_id,
+  username,
 }: {
   isOpen?: boolean;
   onClose?: () => void;
   sender_id: number;
   receiver_id: number;
+  username: string;
 }) {
   const [message, setMessage] = useState<any[]>([]);
   const [input, setInput] = useState("");
@@ -33,12 +34,6 @@ export default function MessagesClient({
       setTimeout(() => setIsVisible(false), 500); // Delay unmounting after animation
     }
   }, [isOpen]);
-
-  // if (!isOpen) return null;
-
-  // const handleAttachmentClick = () => {
-  //   fileInputRef.current?.click();
-  // };
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -147,7 +142,7 @@ export default function MessagesClient({
       </div>
 
       {/* Message input */}
-      <div className="p-2">
+      <div className="p-2 absolute bottom-0 w-full">
         <div className="flex items-center gap-2 bg-white rounded-full border p-1 pl-3">
           <input
             type="text"

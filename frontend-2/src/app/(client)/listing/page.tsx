@@ -1,42 +1,29 @@
-// "use client";
+"use client"
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PropertyList from "@/components/common/home/PropertyList";
-import { fetchProperties } from "@/lib/api/api";
-import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/router";
-
+import { fetchAllProperties } from "@/lib/api/api";
 const ListingPage = () => {
-  const router = useRouter();
-  const { isAuthenticated, loading } = useAuth();
   const [properties, setProperties] = React.useState([]);
   const [error, setError] = React.useState<string | null>(null);
-  const redirectToLogin = () => {
-    router.push("/login");
-  };
   useEffect(() => {
-    if (!loading) {
-      if (!isAuthenticated) {
-        redirectToLogin(); // Redirect if not authenticated
-      } else {
-        // Fetch properties if authenticated
-        fetchProperties()
-          .then((data) => setProperties(data.data))
-          .catch(() => setError("Failed to fetch properties"));
-      }
+    const UserID = typeof window !== "undefined" ? localStorage.getItem("session_id") : null;
+    if (!UserID) {
+      window.location.href = "/login";
+      return;
     }
-  }, [isAuthenticated, loading, redirectToLogin]);
-  if (loading) {
-    return <div>Loading...</div>; // Show a loading state while checking authentication
-  }
+    fetchAllProperties()
+      .then((data) => setProperties(data.data))
+      .catch(() => setError("Failed to fetch properties"));
+  }, []);
 
   if (error) {
-    return <div>{error}</div>; // Show error message if fetching properties fails
+    return <div>{error}</div>;
   }
+
   return (
     <div className="container mx-auto px-4 py-12">
-      {/* Hero Section */}
       <div className="relative w-full h-[500px] overflow-hidden rounded-[30px] mb-16">
         <Image
           src="https://res.cloudinary.com/dnfahcxo3/image/upload/v1746551551/333b412d-b694-42f4-9144-974bb6b255a9.png"

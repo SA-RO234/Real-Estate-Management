@@ -2,8 +2,6 @@ import { ChartAreaInteractive } from "@/components/common/admin/chart-area-inter
 // import {DataTableUsers } from "@/components/common/admin/data-table";
 import { SectionCards } from "@/components/common/admin/section-cards";
 import Messages from "@/components/common/admin/messages";
-import data from "./data.json";
-
 export default function DashboardPage() {
   return (
     <div>

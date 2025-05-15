@@ -10,7 +10,6 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import "./ProductList.scss";
-
 interface PropertyListProps {
   properties: PropertyType[];
 }
@@ -26,7 +25,7 @@ const PropertyList: React.FC<PropertyListProps> = ({ properties }) => {
 
   return (
     <div className="w-full max-w-full cursor-pointer mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {properties.slice(0, 6).map((property, idx) => (
+      {properties.map((property, idx) => (
         <Card
           key={idx}
           className="overflow-hidden h-full flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg hover:translate-y-1 p-0"

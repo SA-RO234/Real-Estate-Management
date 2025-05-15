@@ -18,6 +18,15 @@ export const fetchProperties = async (page: number = 1, limit: number = 4) => {
   };
 };
 
+//  Fetch ALl Property
+export const fetchAllProperties = async () => {
+  const response = await fetch(`http://localhost:3000/app/api/properties.php`);
+  const data = await response.json();
+  return {
+    data,
+  };
+};
+
 //  Fetch Property for Ad
 export const fetchPropertyForAd = async () => {
   const response = await fetch(
