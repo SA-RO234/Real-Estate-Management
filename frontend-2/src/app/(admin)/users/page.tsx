@@ -1,13 +1,39 @@
-import React from "react";
-import {DataTableUsers } from "@/components/common/admin/data-table";
-import data from "../dashboard/data.json";
+"use client"
+import React, { useEffect, useState } from "react";
+import UserTable from "@/components/common/admin/user-table";
+import axios from "axios";
+interface User {
+  id: number;
+  name: string;
+  avatar: string;
+  email: string;
+  phone: number;
+  status: boolean;
+  create_at: string;
+}
+
 const UsersPage = () => {
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(()=>{
+      const fetchuser = async ()=>{
+        try {
+          const response = await axios.get(
+            "http://localhost:3000/app/api/users.php?role=buyer"
+          );
+          setUsers(response.data);
+        } catch (error) {
+          console.error("Failed to fetch users: ",error);
+        }
+      }
+      fetchuser();
+  },[]);
   return (
     <div>
-      <h2 className="pb-2 text-3xl font- semibold tracking-tight transition-colors">
-        Users Management
+      <h2 className="text-3xl font-semibold pb-[20px] tracking-tight transition-colors">
+        Customer Management
       </h2>
-      <DataTableUsers data={data} />
+      <UserTable users={users} />
     </div>
   );
 };
