@@ -7,33 +7,19 @@ import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 import axios from "axios";
-interface LoginPageProps {
-  heading?: string;
-  subheading?: string;
-  logo: {
-    url: string;
-    src: string;
-    alt: string;
-  };
-  loginText?: string;
-  googleText?: string;
-  signupText?: string;
-  signupUrl?: string;
-}
-
-const LoginPage = ({
-  heading = "Login",
-  subheading = "Welcome back",
-  logo = {
+const LoginPage = () => {
+  const heading = "Login";
+  const subheading = "Welcome back";
+  const logo = {
     url: "/",
     src: "https://res.cloudinary.com/dnfahcxo3/image/upload/v1745082558/9c2d1352-17cf-40b9-b71d-f6f2393ec6a0.png",
     alt: "Shadcnblocks",
-  },
-  loginText = "Log in",
-  googleText = "Log in with Google",
-  signupText = "Don't have an account?",
-  signupUrl = "/signup",
-}: LoginPageProps) => {
+  };
+  const loginText = "Log in";
+  const googleText = "Log in with Google";
+  const signupText = "Don't have an account?";
+  const signupUrl = "/signup";
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -51,7 +37,7 @@ const LoginPage = ({
       );
       if (response.data.session_id) {
         localStorage.setItem("session_id", response.data.session_id);
-         localStorage.setItem("user", JSON.stringify(response.data.user));
+        localStorage.setItem("user", JSON.stringify(response.data.user));
         window.location.href = "/";
       } else {
         setError(response.data.message);
