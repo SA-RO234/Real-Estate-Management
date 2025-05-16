@@ -14,7 +14,6 @@ class PropertyController
         $this->property = new PropertyModel($db);
     }
 
-    // Handle GET Request for all property
     // Controller Method to Handle GET Request for All Properties
     public function getProperties(){
         try {
@@ -67,7 +66,7 @@ class PropertyController
         }
     }
 
-    // //   Handle  POST request to add new property 
+    
     public function addProperty()
     {
         $data = json_decode(file_get_contents("php://input"), true); // get data from request body
@@ -75,7 +74,7 @@ class PropertyController
         echo json_encode(["message" => "Property added successfully ! "]);
     }
 
-    // //  Handle PUT request to update a property 
+   
     public function updateProperty()
     {
         $data = json_decode(file_get_contents('php://input'), true);
@@ -83,7 +82,7 @@ class PropertyController
         echo json_encode(['message' => "Property Updated Successfuly ! "]);
     }
 
-    // //  Handle DELETE request to delete for property 
+   
     public function deleteProperty()
     {
         // Get JSON input and decode it

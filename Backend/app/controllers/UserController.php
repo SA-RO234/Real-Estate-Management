@@ -2,7 +2,6 @@
 require_once __DIR__ . "../../models/UserModel.php";
 require "../../config/database.php";
 header("Content-Type :application/json");
-session_start();
 class UserController
 {
     private $userModel;
@@ -46,16 +45,8 @@ class UserController
     }
 
     //  Login controller
-    public function login(){
-        $data = json_decode(file_get_contents("php://input"), true);
-        $email = $data['email'];
-        $password = $data['password'];
-        if ($this->userModel->login($email, $password)) {
-            echo json_encode(["message" => "Login successful"]);
-        } else {
-            echo json_encode(["message" => "Invalid credentials"]);
-        }
-        
+    public function login($email, $password){
+        return $this->userModel->login($email, $password);
     }
     
     public function logout(){

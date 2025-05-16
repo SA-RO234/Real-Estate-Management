@@ -79,7 +79,7 @@ class ChatController
             return;
         }
 
-        $admin_id = $inputData['sender__id'];
+        $admin_id = $inputData['sender_id'];
         $client_id = $inputData['receiver_id'];
         $content = $inputData['content'];
 

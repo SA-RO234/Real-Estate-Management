@@ -43,18 +43,24 @@ class User{
     }
 
     //  Login method
-    public function login($email, $password){
-        $sql = "SELECT * FROM users WHERE email = ?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$email]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (password_verify($password, $user['password']) && $user) {
-            return $user;
-            session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['role'] = $user['role'];
+    public function login($email, $password) {
+        try {
+            $sql = "SELECT * FROM users WHERE email = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$email]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            // Check if user exists and verify the password
+            if ($user && password_verify($password, $user['password'])) {
+                return $user; // Return user data to the controller
+            }
+    
+            // Return false if login fails
+            return false;
+        } catch (PDOException $e) {
+            // Log the error or handle it appropriately
+            return false;
         }
-        return false;
     }
 
     // Logout User
@@ -104,5 +110,21 @@ class User{
         $stmt = $this->conn->prepare("DELETE FROM users WHERE id = ?");
         $stmt->bindParam("i",$id);
         $stmt->execute();
+    }
+}
+
+// Connect to the database
+$pdo = new PDO('mysql:host=localhost;dbname=real_estatedb', 'root', '');
+// Fetch all users with plain-text passwords
+$stmt = $pdo->query("SELECT id, password FROM users");
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach ($users as $user) {
+    // Check if the password is already hashed
+    if (!password_get_info($user['password'])['algo']) {
+        // Hash the plain-text password
+        $hashedPassword = password_hash($user['password'], PASSWORD_BCRYPT);
+        // Update the database with the hashed password
+        $updateStmt = $pdo->prepare("UPDATE users SET password = ? WHERE id = ?");
+        $updateStmt->execute([$hashedPassword, $user['id']]);
     }
 }

@@ -46,7 +46,7 @@ if ($requestMethod === 'POST' && $action === 'send-message') {
     
     $inputData = json_decode(file_get_contents('php://input'), true);
 
-    if (is_array($inputData) && isset($inputData['sender__id'], $inputData['receiver_id'], $inputData['content'])) {
+    if (is_array($inputData) && isset($inputData['sender_id'], $inputData['receiver_id'], $inputData['content'])) {
         $chatController->adminSendMessageToClient();
     } else {
         http_response_code(400);

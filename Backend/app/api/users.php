@@ -4,7 +4,7 @@ header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 require "../controllers/UserController.php";
-
+require_once "../core/Session.php";
 
 $usersController = new UserController();
 
@@ -27,7 +27,21 @@ $routes = [
         }
         // Otherwise, treat it as a login request (requires email and password)
         elseif (isset($input['email']) && isset($input['password'])) {
-            $usersController->login();
+            Session::Start();
+            $user =  $usersController->login($input['email'] , $input['password']);
+            if ($user) {
+                Session::set('user_id', $user['id']);
+                Session::set('email', $user['email']);
+                //  Send session to fron-end 
+                echo json_encode([
+                    'message' => "Login Successfuly",
+                    'session_id' => session_id(), // Send session ID
+                    'user' => $user
+                ]);
+            }else{
+
+                echo json_encode(['message'=> 'Invalid email or password.']);
+            }
         } else {
             echo json_encode(["message" => "Invalid request: Missing required fields."]);
         }
