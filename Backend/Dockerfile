@@ -9,10 +9,10 @@ RUN apt-get update && apt-get install -y unzip curl \
   && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Copy all project files into the Apache web root
-COPY . /var/www/html/
+# COPY . 
 
 # Optional: Set working directory
-WORKDIR /var/www/html/
+WORKDIR /app/api/properties.php
 
 # Expose port 80 (Apache default)
 EXPOSE 80

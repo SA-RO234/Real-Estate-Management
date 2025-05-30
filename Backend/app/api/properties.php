@@ -18,7 +18,8 @@ $routes = [
             $properTyController->getPropertyById($_GET['id']);
         } elseif (isset($_GET['typeCount'])) {
             $properTyController->getPropertyTypeCount();
-        } elseif (isset($_GET['byCity'])) {
+        } elseif (isset
+        ($_GET['byCity'])) {
             $properTyController->getPropertyOfEachCity();
         }else {
             $properTyController->getProperties();
