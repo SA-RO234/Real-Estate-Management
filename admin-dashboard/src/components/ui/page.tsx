@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
-import { SectionCards } from "@/components/admin/section-cards";
-import { ChartAreaInteractive } from "@/components/admin/chart-area-interactive";
-import Messages from "@/components/admin/messages";
-export default function Home() {
+import { ChartAreaInteractive } from "@/components/common/admin/chart-area-interactive";
+// import {DataTableUsers } from "@/components/common/admin/data-table";
+import { SectionCards } from "@/components/common/admin/section-cards";
+import Messages from "@/components/common/admin/messages";
+export default function DashboardPage() {
   return (
     <div>
       <h2 className="pb-2 text-3xl  font-semibold tracking-tight transition-colors ">
