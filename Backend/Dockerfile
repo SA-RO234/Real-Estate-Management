@@ -1,6 +1,9 @@
 # Use PHP with Apache
 FROM php:8.3-apache
 
+# Install PHP dependencies with Composer
+RUN composer install --no-interaction --no-dev --optimize-autoloader
+
 # Install MySQL extensions and other common PHP extensions
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
