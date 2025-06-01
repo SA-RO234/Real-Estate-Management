@@ -1,13 +1,13 @@
 # Use PHP with Apache
 FROM php:8.3-apache
 
-# Install MySQL extensions and other common PHP extensions
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Install necessary extensions
+RUN apt-get update && apt-get install -y unzip curl git libicu-dev libonig-dev \
+    && docker-php-ext-install intl pdo pdo_mysql mbstring
 
 # Install Composer
-RUN apt-get update && apt-get install -y unzip curl \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && ln -s /usr/local/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
 
 # Set working directory
 WORKDIR /var/www/html
