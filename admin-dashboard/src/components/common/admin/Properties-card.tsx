@@ -1,6 +1,6 @@
 import Link from "next/link";
 // import Image from "next/image";
-import { Property } from "@/lib/types";
+import { Property } from "@/app/lib/types";
 
 export default function PropertyCard({ property }: { property: Property }) {
   return (
