@@ -11,14 +11,11 @@ RUN apt-get update && apt-get install -y unzip curl \
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy only composer files first
-COPY composer.json composer.lock ./
-
-# Install PHP dependencies
-RUN composer install --no-interaction --no-plugins --no-scripts
-
-# Now copy the rest of the application
+# Copy files
 COPY . .
+
+# Change Apache DocumentRoot to /var/www/html/app/api
+RUN sed -i 's!/var/www/html!/var/www/html/app/api!g' /etc/apache2/sites-available/000-default.conf
 
 # Expose port 80 (Apache)
 EXPOSE 80
