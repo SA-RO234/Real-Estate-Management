@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Content-Type : application/json"); // Ensure response is json 
-header("Access-Control-Allow-Method : GET , POST ,PUT, DELETE");
+header("Content-Type: application/json"); // Fixed header (removed space before colon)
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE"); // Fixed header (correct name and removed spaces)
 
 require_once "../controllers/PropertyController.php";
 require_once "../../config/database.php";
@@ -18,10 +18,9 @@ $routes = [
             $properTyController->getPropertyById($_GET['id']);
         } elseif (isset($_GET['typeCount'])) {
             $properTyController->getPropertyTypeCount();
-        } elseif (isset
-        ($_GET['byCity'])) {
+        } elseif (isset($_GET['byCity'])) {
             $properTyController->getPropertyOfEachCity();
-        }else {
+        } else {
             $properTyController->getProperties();
         }
     },
