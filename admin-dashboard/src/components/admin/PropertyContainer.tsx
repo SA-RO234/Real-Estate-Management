@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { fetchProperties } from "@/lib/api/api";
+import { fetchProperties } from "@/app/lib/api/api";
 import PropertyCard from "./Properties-card";
-import { number } from "zod";
 const Propertycontainer = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
