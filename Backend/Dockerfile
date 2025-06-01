@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y unzip curl \
 WORKDIR /var/www/html
 
 # Copy all files into the container
-COPY . .
+COPY . /var/www/html/
 
 # Install PHP dependencies if using Composer (optional)
 RUN composer install
