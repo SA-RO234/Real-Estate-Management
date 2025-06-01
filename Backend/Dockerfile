@@ -1,9 +1,19 @@
 # Use PHP with Apache
 FROM php:8.3-apache
 
-# Install necessary extensions
-RUN apt-get update && apt-get install -y unzip curl git libicu-dev libonig-dev \
-    && docker-php-ext-install intl pdo pdo_mysql mbstring
+RUN apt-get update && apt-get install -y \
+    unzip \
+    libzip-dev \
+    libicu-dev \
+    libonig-dev \
+    git \
+    zip \
+    && docker-php-ext-install \
+    pdo \
+    pdo_mysql \
+    intl \
+    mbstring \
+    zip
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php \
@@ -12,11 +22,13 @@ RUN curl -sS https://getcomposer.org/installer | php \
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy files
-COPY . .
+COPY composer.json composer.lock ./
 
 # Install PHP dependencies with Composer
-RUN composer install --no-interaction --no-dev --optimize-autoloader
+RUN composer install
+
+# Then copy the rest of your app
+COPY . .
 
 # Change Apache DocumentRoot to /var/www/html/app/api
 RUN sed -i 's!/var/www/html!/var/www/html/app/api!g' /etc/apache2/sites-available/000-default.conf
