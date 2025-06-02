@@ -13,14 +13,21 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     command: --pid-file=/var/lib/mysql/mysqld.pid
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password=yeayyeab2"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
   backend:
     build:
       context: ./Backend
     container_name: real_estate_backend
+    user: root
     restart: unless-stopped
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy  # Wait for MySQL to be healthy
     environment:
       DB_HOST: mysql
       DB_USER: root
