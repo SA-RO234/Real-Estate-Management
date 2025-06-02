@@ -33,5 +33,9 @@ COPY . .
 # Change Apache DocumentRoot to /var/www/html/app/api
 RUN sed -i 's!/var/www/html!/var/www/html/app/api!g' /etc/apache2/sites-available/000-default.conf
 
+FROM mysql:8
+ENV MYSQL_ROOT_PASSWORD=your_root_password
+ENV MYSQL_DATABASE=real_estatedb
+
 # Expose port 80 (Apache)
 EXPOSE 80

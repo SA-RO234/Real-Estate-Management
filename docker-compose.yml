@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: real_estate_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_yeayyeab2
+      MYSQL_DATABASE: real_estatedb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./Backend
+    container_name: real_estate_backend
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: root_yeayyeab2
+      DB_NAME: real_estatedb
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: ./frontend-2
+    container_name: real_estate_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
