@@ -1,6 +1,7 @@
 # Use PHP with Apache
 FROM php:8.3-apache
 
+# Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
     unzip \
     libzip-dev \
@@ -22,20 +23,18 @@ RUN curl -sS https://getcomposer.org/installer | php \
 # Set working directory
 WORKDIR /var/www/html
 
+# Copy composer files and install dependencies
 COPY composer.json composer.lock ./
+RUN composer install --no-scripts --no-autoloader
 
-# Install PHP dependencies with Composer
-RUN composer install
-
-# Then copy the rest of your app
+# Copy the rest of your application
 COPY . .
 
 # Change Apache DocumentRoot to /var/www/html/app/api
 RUN sed -i 's!/var/www/html!/var/www/html/app/api!g' /etc/apache2/sites-available/000-default.conf
 
-FROM mysql:8
-ENV MYSQL_ROOT_PASSWORD=your_root_password
-ENV MYSQL_DATABASE=real_estatedb
-
-# Expose port 80 (Apache)
+# Expose port 80
 EXPOSE 80
+
+# Start Apache
+CMD ["apache2-foreground"]
