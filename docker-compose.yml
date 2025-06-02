@@ -14,27 +14,40 @@ services:
       - mysql_data:/var/lib/mysql
     command: --pid-file=/var/lib/mysql/mysqld.pid
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password=yeayyeab2"]
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "--password=yeayyeab2",
+        ]
       interval: 5s
       timeout: 5s
       retries: 10
+    networks:
+      - app-network
 
   backend:
     build:
       context: ./Backend
     container_name: real_estate_backend
-    user: root
     restart: unless-stopped
     depends_on:
       mysql:
-        condition: service_healthy  # Wait for MySQL to be healthy
+        condition: service_healthy
     environment:
       DB_HOST: mysql
-      DB_USER: root
+      DB_DATABASE: real_estatedb
+      DB_USERNAME: root
       DB_PASSWORD: yeayyeab2
-      DB_NAME: real_estatedb
     ports:
       - "5000:80"
+    networks:
+      - app-network
 
   frontend:
     build:
@@ -45,6 +58,12 @@ services:
       - "3000:80"
     depends_on:
       - backend
+    networks:
+      - app-network
 
 volumes:
   mysql_data:
+
+networks:
+  app-network:
+    driver: bridge
